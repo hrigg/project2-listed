@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include( 'partials/head.ejs' ) %>
+  <body>
+    <%- include( 'partials/nav.ejs' ) %>
+    <section>
+      <div>
+        <h1 class="title">New Listing</h1>
+      </div>
+    </section>
+    <main class="container">
+      <div>
+        <form action="/house" method="POST">
+          <div>
+            <label for="name">Listing Title</label>
+            <input
+              type="text"
+              placeholder="Name"
+              name="name"
+              id="name"
+            />
+          </div>
+          <div>
+            <label for="image">Image</label>
+            <input
+            class= "input" 
+            type= "text"
+            placeholder= "image"
+            name= "image"
+            id="image"
+            /> 
+          </div>
+          <div>
+            <label for="beds"># beds</label>
+            <input 
+            type="Number" 
+            placeholder="Beds" 
+            name="beds" 
+            id="beds" 
+            />
+          </div>
+          <div>
+            <label for="baths"># baths</label>
+            <input 
+            type="Number" 
+            placeholder="Baths" 
+            name="baths" 
+            id="baths" 
+            />
+          </div>
+          <div>
+            <label for="price"># price</label>
+            <input 
+            type="Number" 
+            placeholder="Price" 
+            name="price" 
+            id="price" 
+            />
+          </div>
+          <div>
+            <label for="city">City:</label>
+            <select name="city" id="city">
+                <option value="dc">D.C.</option>
+                <option value="chicago">Chicago</option>
+                <option value="dallas">Dallas</option>
+            </select>
+          </div>
+          <button class="button is-info">Create Listing</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

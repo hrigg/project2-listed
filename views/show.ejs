@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- head -->
+<%- include( 'partials/head.ejs' )  %>
+
+<body>
+    <%- include( 'partials/nav.ejs' )  %>
+
+    <section>
+        <div>
+            <h2 class="title">House: <%=house.name%>
+            </h2>
+
+        </div>
+    </section>
+
+    <main class="container">
+        <div>
+            <small>Name: <%= house.name %></small>
+            <small><img src="<%=house.image%>" style="max-width: 200px;"></small>
+            <small>Price <%= house.price %></small>
+            <small>City: <%= house.city %></small>
+            <small>Beds: <%= house.beds %></small>
+            <small>Baths: <%= house.baths%></small>
+        </div>
+    </main>
+
+</body>
+
+</html>
