@@ -40,10 +40,11 @@ router.get("/:houseIndex", async (req, res) => {
 router.get('/', async (req, res) => {
     
     try{
-        const dcHouse= await db.House.find({city: dc})
-        const chicagoHouse= await db.House.find({city: chicago})
-        const dallasHouse= await db.House.find({city: dallas})
-        const context= {dcHouse: dcHouse, chicagoHouse: chicagoHouse, dallasHouse: dallasHouse}
+        const allHouses= await db.House.find();
+        const dcHouse= await db.House.find({city: 'dc'})
+        const chicagoHouse= await db.House.find({city: 'chicago'})
+        const dallasHouse= await db.House.find({city: 'dallas'})
+        const context= {dcHouse: dcHouse, chicagoHouse: chicagoHouse, dallasHouse: dallasHouse, houses: allHouses}
         res.render("index.ejs", context);
     
     } catch(err){
