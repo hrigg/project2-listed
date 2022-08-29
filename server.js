@@ -2,6 +2,7 @@ const express = require('express')
 const methodOverride = require('method-override');
 require('./config/db.connection')
 const houseController = require('./controllers/house_controller')
+const realtorController = require('./controllers/realtor')
 
 const app = express()
 const PORT = 4000
