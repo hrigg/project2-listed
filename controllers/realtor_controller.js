@@ -12,7 +12,7 @@ console.log('realtor model test', db.Realtor)
 
 router.get('/', async (req, res, next) => {
    try{
-    const allRealtor= await db.Realtor.find().populate('realtor').exec()
+    const allRealtor= await db.Realtor.find().populate('house').exec()
     const allHouses= await db.House.find()
     res.render('realtor/index_realtor.ejs', {realtors: allRealtor, houses: allHouses})
    }
