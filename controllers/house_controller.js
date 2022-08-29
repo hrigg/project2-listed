@@ -23,10 +23,9 @@ router.get("/:houseIndex", async (req, res) => {
   }
   });
 
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
     
     try{
-
         const dcHouse= await db.House.find({city: dc})
         const chicagoHouse= await db.House.find({city: chicago})
         const dallasHouse= await db.House.find({city: dallas})
