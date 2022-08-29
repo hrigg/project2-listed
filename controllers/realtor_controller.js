@@ -1,38 +1,28 @@
 const express = require('express')
-// import express to access Router function
-
 const router = express.Router()
-// creates an instance of the router 
 
-/* 
-    App Data: REVIEW & PRODUCT MODELS
-*/
 
 // MIDDLEWARE
-// express.json() and express.urlencoded is needed for POST and PUT requests to take in data payloads.
-// built in method to recognize incoming request object as a JSON object
-router.use(express.json());
 
-// built in method to recognize incoming request object as strings or arrays
+router.use(express.json());
 router.use(express.urlencoded({ extended: false }));
 const db = require('../models')
 console.log('realtor model test', db.Realtor)
-/*  Beginning of Reviews routes */
 
-// get all reviews route
+
 router.get('/', async (req, res, next) => {
    try{
-    const allReviews= await db.Review.find().populate('product').exec()
-    const allProducts= await db.Product.find()
-    res.render('reviews/index.ejs', {reviews: allReviews, products: allProducts})
+    const allRealtor= await db.Realtor.find().populate('realtor').exec()
+    const allHouses= await db.House.find()
+    res.render('realtor/index.ejs', {realtors: allRealtors, houses: allHouses})
    }
    catch(err){
     console.log(err)
     next()
    }
-   // res.send('all reviews')
+   // res.send('all realtors')
 });
-
+//////////////
 // Reviews "new" route - GET request- displays form for creating a new review
 // This route will be considered optional, logically we would not want a whole page for creating a review, instead adding a form on a product show page. 
 router.get('/new', (req, res) => {
