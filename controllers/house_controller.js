@@ -11,6 +11,20 @@ router.get('/new', (req, res) => {
     res.render('new.ejs')
 });
 
+router.post("/", async (req, res) => {
+    const createdHouse = req.body;
+    try {
+      const newHouse = await db.House.create(createdHouse);
+  
+      console.log(newHouse);
+  
+      res.redirect("/house");
+  
+    } catch (err) {
+      console.log(err)
+    }
+  });
+
 router.get("/:houseIndex", async (req, res) => {
 
     try{
