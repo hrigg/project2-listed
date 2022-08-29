@@ -7,10 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    NEW FORM HERE
+    Have an interested client? Enter your information here! 
     <form method="POST" action="/realtor">
         <div>
-            <label for="name">Your Name</label>
+            <label for="name">Realtor Name</label>
             <input
             class= "input" 
             type= "text"
@@ -20,7 +20,7 @@
             /> 
           </div>
         <div>
-            <label for="email">Your Email</label>
+            <label for="email">Realtor Email</label>
             <input
             class= "input" 
             type= "text"
@@ -59,6 +59,7 @@
           </div>
 
         <div>
+            <label for ='property'> Choose Property </label>
             <select name="house">
                 <% house.forEach((house)=>{ %>
                     <option value="<%= house._id%>"><%=house.name%>
