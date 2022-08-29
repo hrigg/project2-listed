@@ -12,6 +12,7 @@ app.use(express.static('public'))
 app.use(methodOverride('_method'));
 
 app.use('/house', houseController)
+app.use('/realtor',realtorController)
 
 app.get('/', (req, res) => {
     res.render(`home.ejs`)
