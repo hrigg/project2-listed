@@ -40,7 +40,7 @@ router.post("/", async (req, res) => {
     const createdHouse = req.body;
     try {
       const newHouse = await db.House.create(createdHouse);
-     const realtor=req.body.realtor
+        const realtor=req.body.realtor
       console.log(newHouse);
   
       res.redirect("/house");
@@ -98,9 +98,9 @@ router.get('/dallas', async (req, res) => {
 router.get("/:houseIndex", async (req, res) => {
 
     try{
-      const foundRealtor = await db.Realtor.find()
-      const foundHouse = await db.House.findById(req.params.houseIndex)
-      res.render("show.ejs", { house: foundHouse, realtor: foundRealtor, id: foundHouse._id });
+     const foundRealtor= await db.Realtor.find()
+      const foundHouse = await db.House.findById(req.params.houseIndex).populate('realtor')
+      res.render("show.ejs", { house: foundHouse, id: foundHouse._id , realtor: foundRealtor, realtorId: foundRealtor._id }, );
   
   }catch(err){
       console.log(err)

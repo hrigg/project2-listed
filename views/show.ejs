@@ -29,6 +29,17 @@
             <small>Baths: <%= house.baths%></small>
         </div>
 <div> REALTOR INFO</div>
+
+<h2> <%= house.realtor.name %></h2>
+
+
+
+<% console.log(typeof(house.realtor))
+console.log(house.realtor)
+console.log(house.realtor)
+console.log(house.realtor === realtor[1]._id) %>
+
+
         <div>
             <p class="control">
                 <form method="POST" action="/house/<%= house._id %>?_method=DELETE">
