@@ -7,32 +7,25 @@ router.use(express.urlencoded({ extended: false }));
 
 const db = require("../models");
 
-router.get('/new', (req, res) => {
+router.get('/new',async  (req, res) => {
     // const realtor= db.Realtor.find()
     // const context= {realtor, realtor}
-    db.House.find({})
-    .populate("house")
-    .exec((error, allHouse) => {
-      if (error) {
-        console.log(error);
-        req.error = error;
-        return next();
-      }
+    const allHouse= await db.House.find()
+    const allRealtor= await db.Realtor.find()
 			// Here we are requesting all the products to add into the context
-      db.Realtor.find({}, (error, allRealtor) => {
-        if (error) {
-          console.log(error);
-          req.error = error;
-          return next();
-        }
-        const context = { realtor: allRealtor, house: allHouse };
-        return res.render("index.ejs", context);
-      });
-
+    //   db.Realtor.find({}, (error, allRealtor) => {
+    //     if (error) {
+    //       console.log(error);
+    //       req.error = error;
+    //       return next();
+    //     }
+     const context = { realtor: allRealtor, house: allHouse };
+    //     return res.render("zindex.ejs", context);
+    //   });
+    console.log('realtor' , allRealtor)
     res.render('new.ejs', context)
     });
    
-});
 
 router.post("/", async (req, res) => {
     const createdHouse = req.body;

@@ -11,9 +11,9 @@
             Here we would have a list of realtors who have entered the database 
 
             <% for( let i = 0; i<realtor.length; i++){ %>
-                <% const realtor = realtor[i] %>
-                <a href="/realtor/<%=realtor._id%>"><%= realtor.name %></a> 
-                <img src="<%=realtor.image%>" style="max-width: 200px;">
+                <% const firstRealtor = realtor[i] %>
+                <a href="/realtor/<%=firstRealtor._id%>"><%= firstRealtor.name %></a> 
+                <img src="<%=firstRealtor.image%>" style="max-width: 200px;">
             <% } %>
         </body>
         </html>
