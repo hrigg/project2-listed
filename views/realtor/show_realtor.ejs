@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include( '../partials/head.ejs' ) %> 
+<body>  
+<%- include( '../partials/nav.ejs' )  %>
+    <title>Realtor</title>
+</head>
+<body>
+  
+    Here will be a profile of a realtor that you clicked on 
+    <div>
+        
+       <img src="<%=realtor.image%>" style="max-width: 200px;"></small>
+        <h2> <%= realtor.name %></h2>
+        <h3> <%= realtor.email %></h3>
+        <h3> <%= realtor.note %></h3>
+
+        Properties Listed Under <%= realtor.name %>
+        <% for( let i = 0; i<house.length; i++){ %>
+            <% const firstHouse = house[i] %>
+            <h2> <%=i+1%></h2>
+            <a href="/house/<%=firstHouse._id%>"><%= firstHouse.name %></a>
+            <img src="<%=firstHouse.imageOne%>" style="max-width: 200px;"> 
+        <% } %> 
+        
+        <div>
+            <p class="control">
+                <form method="POST" action="/realtor/<%= realtor._id %>?_method=DELETE">
+                    <input class="button is-danger" type="submit" value="Delete Realtor"/> 
+                    </form>
+            Houses with this realtor
+            </p>
+        </div>
+    </div>
+
+
+</body>
+</html>

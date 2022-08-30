@@ -30,11 +30,11 @@
             />
           </div>
           <div>
-            <label for="note">Note</label>
+            <label for="note">About Me</label>
             <input
             class= "input" 
             type= "text"
-            placeholder= "Do you have a client interested in this "
+            placeholder= "About Me"
             name= "note"
             id="note"
             /> 
@@ -49,25 +49,9 @@
             id="image"
             /> 
           </div>
-          <div>
-            <label for="city">City:</label>
-            <select name="city" id="city">
-                <option value="dc">D.C.</option>
-                <option value="chicago">Chicago</option>
-                <option value="dallas">Dallas</option>
-            </select>
-          </div>
+   
 
-        <div>
-            <label for ='property'> Choose Property </label>
-            <select name="house">
-                <% house.forEach((house)=>{ %>
-                    <option value="<%= house._id%>"><%=house.name%>
-
-                    </option>
-              <%  }) %>
-            </select>
-        </div>
+     
         <!-- PROBLEM: how do i get prodcut id into form? -->
         <!-- pattern1- privde all products to form and let user select -->
             <!-- requires passing some product data to the index page -->

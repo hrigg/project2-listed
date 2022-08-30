@@ -12,9 +12,9 @@ console.log('realtor model test', db.Realtor)
 
 router.get('/', async (req, res, next) => {
    try{
-    const allRealtor= await db.Realtor.find().populate('house').exec()
+    const allRealtor= await db.Realtor.find()
     const allHouses= await db.House.find()
-    res.render('realtor/index_realtor.ejs', {realtors: allRealtor, houses: allHouses})
+    res.render('realtor/index_realtor.ejs', {realtor: allRealtor, houses: allHouses})
    }
    catch(err){
     console.log(err)
@@ -26,7 +26,7 @@ router.get('/', async (req, res, next) => {
 //NEW ROUTE 
 router.get('/new', async (req, res, next) => {
     try{
-        const allRealtors= await db.Realtor.find().populate('house').exec()
+        const allRealtors= await db.Realtor.find()
         const allHouses= await db.House.find()
         res.render('realtor/new_realtor.ejs', {realtor: allRealtors, house: allHouses})
        }
@@ -40,8 +40,10 @@ router.get('/new', async (req, res, next) => {
 
 router.get('/:id/', async (req, res, next) => {
     try{
-        const foundRealtor= await db.Realtor.findById(req.params.id).populate('house').exec()
-        res.render('realtor/show_realtor.ejs', {realtor:foundRealtor})
+        const foundRealtor= await db.Realtor.findById(req.params.id)
+        const allHouse= await db.House.find({realtor: req.params.id})
+        
+        res.render('realtor/show_realtor.ejs', {realtor:foundRealtor, id: foundRealtor._id, house:allHouse })
     }
     catch(err){
         console.log(err)
@@ -60,10 +62,12 @@ router.get('/:id/edit', async (req,res, next)=>{
 
 router.post('/', async (req, res, next) => {
     try{
+
         const newRealtor= await db.Realtor.create(req.body)
         //res.send(newRealtor)
         //res.redirect('/realtor/'+newRealtor._id)
-        res.redirect(`/realtor/${newRealtor.house}`)
+       // res.redirect(`/realtor/${newRealtor.house}`)
+       res.redirect('/realtor')
     }
     catch(err){
         console.log(err)
@@ -76,9 +80,17 @@ router.post('/', async (req, res, next) => {
 
 //DELETE
 
-router.delete('/:id', async (req,res, next)=>{
-    res.send('realtor delete')
-})
+router.delete("/:realtorId", async (req, res) => {
+    try{
+  
+      const foundRealtor = await db.Realtor.findByIdAndDelete(req.params.realtorId)
+      console.log(foundRealtor)
+      return res.redirect("/realtor");
+  
+  }catch(err){
+      console.log(err)
+  }
+  });
 
 
 //PUT EDIT

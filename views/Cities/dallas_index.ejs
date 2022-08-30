@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include( '../partials/head.ejs') %> 
+    <body>  
+		<%- include( '../partials/nav.ejs' )  %>
+
+        <section>
+            <div>
+                <h2 class="title">Dallas Listings</h2>
+            </div>
+        </section>
+
+        <main class="container">
+            <div>
+                <% for( let i = 0; i<dallasHouse.length; i++){ %>
+                    <% const firstHouse = dallasHouse[i] %>
+                    <a href="/house/<%=firstHouse._id%>"><%= firstHouse.name %></a>
+                    <img src="<%=firstHouse.imageOne%>" style="max-width: 200px;"> 
+                <% } %> 
+            </div>
+        </main>
+    
+	</body>
+</html>
