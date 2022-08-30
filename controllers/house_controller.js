@@ -50,12 +50,24 @@ router.get('/dc', async (req, res) => {
     } 
     });
 
-router.get('/chicago', (req, res) => {
-        res.render('chicaco_index.ejs')
+router.get('/chicago', async (req, res) => {
+        try {
+        const chicagoHouse= await db.House.find({city: 'chicago'})
+        const context= {chicagoHouse: chicagoHouse}
+        res.render('Cities/chicago_index.ejs', context);
+    } catch(err){
+        console.log(err)
+    } 
     });
 
-router.get('/dallas', (req, res) => {
-        res.render('dallas_index.ejs')
+router.get('/dallas', async (req, res) => {
+        try {
+        const dallasHouse= await db.House.find({city: 'dallas'})
+        const context= {dallasHouse: dallasHouse}
+        res.render('Cities/dallas_index.ejs', context);
+    } catch(err){
+        console.log(err)
+    } 
     });
 
 router.get("/:houseIndex", async (req, res) => {
