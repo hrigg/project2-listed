@@ -108,7 +108,7 @@ router.put('/:id', async (req, res, next)=>{
     try{
         const updatedRealtor= await db.Realtor.findByIdAndUpdate(req.params.id, req.body)
         
-        return res.redirect('/')
+        return res.redirect('/realtor')
     }catch(error){
         console.log(error)
         next()

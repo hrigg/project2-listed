@@ -14,7 +14,7 @@
         <h2> <%= realtor.name %></h2>
         <h3> <%= realtor.email %></h3>
         <h3> <%= realtor.note %></h3>
-
+<a href="<%=realtor._id%>/edit"> Edit Your Page</a>
         Properties Listed Under <%= realtor.name %>
         <% for( let i = 0; i<house.length; i++){ %>
             <% const firstHouse = house[i] %>
