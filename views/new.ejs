@@ -85,6 +85,17 @@
                 <option value="dallas">Dallas</option>
             </select>
           </div>
+          <div>
+            <label for ='realtor'> Choose Realtor </label>
+            <select name="realtor">
+                <% realtor.forEach((realtor)=>{ %>
+                    <option value="<%= realtor._id%>"><%=realtor.name%>
+
+                    </option>
+              <%  }) %>
+            </select>
+        </div>
+        <!-- PROB
           <button class="button is-info">Create Listing</button>
         </form>
       </div>

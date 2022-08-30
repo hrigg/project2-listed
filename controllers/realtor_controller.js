@@ -12,7 +12,7 @@ console.log('realtor model test', db.Realtor)
 
 router.get('/', async (req, res, next) => {
    try{
-    const allRealtor= await db.Realtor.find().populate('house').exec()
+    const allRealtor= await db.Realtor.find()
     const allHouses= await db.House.find()
     res.render('realtor/index_realtor.ejs', {realtors: allRealtor, houses: allHouses})
    }
@@ -26,7 +26,7 @@ router.get('/', async (req, res, next) => {
 //NEW ROUTE 
 router.get('/new', async (req, res, next) => {
     try{
-        const allRealtors= await db.Realtor.find().populate('house').exec()
+        const allRealtors= await db.Realtor.find()
         const allHouses= await db.House.find()
         res.render('realtor/new_realtor.ejs', {realtor: allRealtors, house: allHouses})
        }
@@ -41,7 +41,7 @@ router.get('/new', async (req, res, next) => {
 router.get('/:id/', async (req, res, next) => {
     try{
         const foundRealtor= await db.Realtor.findById(req.params.id).populate('house').exec()
-        res.render('realtor/show_realtor.ejs', {realtor:foundRealtor})
+        res.render('realtor/show_realtor.ejs', {realtor:foundRealtor, id: foundRealtor._id  })
     }
     catch(err){
         console.log(err)
@@ -60,10 +60,12 @@ router.get('/:id/edit', async (req,res, next)=>{
 
 router.post('/', async (req, res, next) => {
     try{
+        
         const newRealtor= await db.Realtor.create(req.body)
         //res.send(newRealtor)
         //res.redirect('/realtor/'+newRealtor._id)
-        res.redirect(`/realtor/${newRealtor.house}`)
+       // res.redirect(`/realtor/${newRealtor.house}`)
+       res.redirect('/realtor')
     }
     catch(err){
         console.log(err)
