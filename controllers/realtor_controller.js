@@ -41,7 +41,9 @@ router.get('/new', async (req, res, next) => {
 router.get('/:id/', async (req, res, next) => {
     try{
         const foundRealtor= await db.Realtor.findById(req.params.id)
-        res.render('realtor/show_realtor.ejs', {realtor:foundRealtor, id: foundRealtor._id  })
+        const allHouse= await db.House.find({realtor: req.params.id})
+        
+        res.render('realtor/show_realtor.ejs', {realtor:foundRealtor, id: foundRealtor._id, house:allHouse })
     }
     catch(err){
         console.log(err)

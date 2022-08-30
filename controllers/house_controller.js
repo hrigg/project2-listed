@@ -7,12 +7,34 @@ router.use(express.urlencoded({ extended: false }));
 
 const db = require("../models");
 
+
+router.get('/new',async  (req, res) => {
+    // const realtor= db.Realtor.find()
+    // const context= {realtor, realtor}
+    const allHouse= await db.House.find()
+    const allRealtor= await db.Realtor.find()
+			// Here we are requesting all the products to add into the context
+    //   db.Realtor.find({}, (error, allRealtor) => {
+    //     if (error) {
+    //       console.log(error);
+    //       req.error = error;
+    //       return next();
+    //     }
+     const context = { realtor: allRealtor, house: allHouse };
+    //     return res.render("zindex.ejs", context);
+    //   });
+    console.log('realtor' , allRealtor)
+    res.render('new.ejs', context)
+    });
+   
+
 router.get('/new', async (req, res) => {
     const foundHouse = await db.House.find()
     const foundRealtor = await db.Realtor.find()
         const context = { realtor: foundRealtor, house: foundHouse };
         res.render('new.ejs', context);
       });
+
 
 router.post("/", async (req, res) => {
     const createdHouse = req.body;
@@ -76,9 +98,9 @@ router.get('/dallas', async (req, res) => {
 router.get("/:houseIndex", async (req, res) => {
 
     try{
-  
+      const foundRealtor = await db.Realtor.find()
       const foundHouse = await db.House.findById(req.params.houseIndex)
-      res.render("show.ejs", { house: foundHouse, id: foundHouse._id });
+      res.render("show.ejs", { house: foundHouse, realtor: foundRealtor, id: foundHouse._id });
   
   }catch(err){
       console.log(err)
