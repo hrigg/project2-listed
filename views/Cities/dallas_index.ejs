@@ -14,9 +14,8 @@
             <div>
                 <% for( let i = 0; i<dallasHouse.length; i++){ %>
                     <% const firstHouse = dallasHouse[i] %>
-                    <a href="/house/<%=firstHouse._id%>">
-                    <img src="<%=firstHouse.image%>" style="max-width: 200px;"> </a>
-                    <%= firstHouse.name %>
+                    <a href="/house/<%=firstHouse._id%>"><%= firstHouse.name %></a>
+                    <img src="<%=firstHouse.image%>" style="max-width: 200px;"> 
                 <% } %> 
             </div>
         </main>
