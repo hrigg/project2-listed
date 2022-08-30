@@ -7,7 +7,7 @@ router.use(express.urlencoded({ extended: false }));
 
 const db = require("../models");
 
-<<<<<<< HEAD
+
 router.get('/new',async  (req, res) => {
     // const realtor= db.Realtor.find()
     // const context= {realtor, realtor}
@@ -27,14 +27,14 @@ router.get('/new',async  (req, res) => {
     res.render('new.ejs', context)
     });
    
-=======
+
 router.get('/new', async (req, res) => {
     const foundHouse = await db.House.find()
     const foundRealtor = await db.Realtor.find()
         const context = { realtor: foundRealtor, house: foundHouse };
         res.render('new.ejs', context);
       });
->>>>>>> f158a879546d22b817118055330ca9f5fb6b20e0
+
 
 router.post("/", async (req, res) => {
     const createdHouse = req.body;
