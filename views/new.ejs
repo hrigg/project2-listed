@@ -86,16 +86,14 @@
             </select>
           </div>
           <div>
-            <label for ='realtorSelect'> Choose Realtor </label>
-            <select id='realtorSelect' name="realtor">
-                <% realtor.forEach(realtor=>{ %>
-                    <option value="<%= realtor._id%>"><%=realtor.name%>
-
+            <label for = 'realtor'> Choose Realtor </label>
+            <select name= "realtor" id="realtor">
+                <% realtor.forEach(realtor => { %>
+                    <option value="<%= realtor._id %>"><%=realtor.name%>
                     </option>
               <%  }) %>
             </select>
         </div>
-        <!-- PROB
           <button class="button is-info">Create Listing</button>
         </form>
       </div>

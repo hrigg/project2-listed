@@ -1,19 +1,13 @@
         <!DOCTYPE html>
         <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Document</title>
-        </head>
-        <body>
-            REALTOR TEST INDEX PAGE
-            Here we would have a list of realtors who have entered the database 
-
+        <%- include( '../partials/head.ejs' ) %> 
+    <body>  
+		<%- include( '../partials/nav.ejs' )  %>
+            <h2>Awesome Realtors</h2>
             <% for( let i = 0; i<realtor.length; i++){ %>
-                <% const realtor = realtor[i] %>
-                <a href="/realtor/<%=realtor._id%>"><%= realtor.name %></a> 
-                <img src="<%=realtor.image%>" style="max-width: 200px;">
+                <% const firstRealtor = realtor[i] %>
+                <a href="/realtor/<%=firstRealtor._id%>"><%= firstRealtor.name %></a> 
+                <img src="<%=firstRealtor.image%>" style="max-width: 200px;">
             <% } %>
         </body>
         </html>

@@ -40,7 +40,7 @@ router.get('/new', async (req, res, next) => {
 
 router.get('/:id/', async (req, res, next) => {
     try{
-        const foundRealtor= await db.Realtor.findById(req.params.id).populate('house').exec()
+        const foundRealtor= await db.Realtor.findById(req.params.id)
         res.render('realtor/show_realtor.ejs', {realtor:foundRealtor, id: foundRealtor._id  })
     }
     catch(err){
@@ -78,9 +78,17 @@ router.post('/', async (req, res, next) => {
 
 //DELETE
 
-router.delete('/:id', async (req,res, next)=>{
-    res.send('realtor delete')
-})
+router.delete("/:realtorId", async (req, res) => {
+    try{
+  
+      const foundRealtor = await db.Realtor.findByIdAndDelete(req.params.realtorId)
+      console.log(foundRealtor)
+      return res.redirect("/realtor");
+  
+  }catch(err){
+      console.log(err)
+  }
+  });
 
 
 //PUT EDIT
