@@ -25,6 +25,39 @@ router.post("/", async (req, res) => {
     }
   });
 
+router.get('/', async (req, res) => {
+    
+    try{
+        const allHouses= await db.House.find()
+        const dcHouse= await db.House.find({city: 'dc'})
+        const chicagoHouse= await db.House.find({city: 'chicago'})
+        const dallasHouse= await db.House.find({city: 'dallas'})
+        const context= {dcHouse: dcHouse, chicagoHouse: chicagoHouse, dallasHouse: dallasHouse, houses: allHouses}
+        res.render("index.ejs", context);
+    
+    } catch(err){
+        console.log(err)
+    }  
+    });
+
+router.get('/dc', async (req, res) => {
+        try {
+        const dcHouse= await db.House.find({city: 'dc'})
+        const context= {dcHouse: dcHouse}
+        res.render('Cities/dc_index.ejs', context);
+    } catch(err){
+        console.log(err)
+    } 
+    });
+
+router.get('/chicago', (req, res) => {
+        res.render('chicaco_index.ejs')
+    });
+
+router.get('/dallas', (req, res) => {
+        res.render('dallas_index.ejs')
+    });
+
 router.get("/:houseIndex", async (req, res) => {
 
     try{
@@ -36,21 +69,6 @@ router.get("/:houseIndex", async (req, res) => {
       console.log(err)
   }
   });
-
-router.get('/', async (req, res) => {
-    
-    try{
-        const allHouses= await db.House.find();
-        const dcHouse= await db.House.find({city: 'dc'})
-        const chicagoHouse= await db.House.find({city: 'chicago'})
-        const dallasHouse= await db.House.find({city: 'dallas'})
-        const context= {dcHouse: dcHouse, chicagoHouse: chicagoHouse, dallasHouse: dallasHouse, houses: allHouses}
-        res.render("index.ejs", context);
-    
-    } catch(err){
-        console.log(err)
-    }  
-    });
 
 router.delete("/:houseId", async (req, res) => {
   try{
