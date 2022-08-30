@@ -17,13 +17,22 @@
 
     <main class="container">
         <div>
-            <small>Name: <%= house.name %></small>
+            <!-- <h2>Name: <%= house.name %></h2> -->
             <small><img src="<%=house.image%>" style="max-width: 200px;"></small>
             <small>Price <%= house.price %></small>
             <small>City: <%= house.city %></small>
             <small>Beds: <%= house.beds %></small>
             <small>Baths: <%= house.baths%></small>
         </div>
+
+        <div>
+            <p class="control">
+                <form method="POST" action="/house/<%= house._id %>?_method=DELETE">
+                    <input class="button is-danger" type="submit" value="Delete Listing"/> 
+                    </form>
+            </p>
+        </div>
+
     </main>
 
 </body>
