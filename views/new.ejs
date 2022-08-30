@@ -86,9 +86,9 @@
             </select>
           </div>
           <div>
-            <label for ='realtor'> Choose Realtor </label>
-            <select name="realtor">
-                <% realtor.forEach((realtor)=>{ %>
+            <label for ='realtorSelect'> Choose Realtor </label>
+            <select id='realtorSelect' name="realtor">
+                <% realtor.forEach(realtor=>{ %>
                     <option value="<%= realtor._id%>"><%=realtor.name%>
 
                     </option>

@@ -8,14 +8,37 @@ router.use(express.urlencoded({ extended: false }));
 const db = require("../models");
 
 router.get('/new', (req, res) => {
-    res.render('new.ejs')
+    // const realtor= db.Realtor.find()
+    // const context= {realtor, realtor}
+    db.House.find({})
+    .populate("house")
+    .exec((error, allHouse) => {
+      if (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+      }
+			// Here we are requesting all the products to add into the context
+      db.Realtor.find({}, (error, allRealtor) => {
+        if (error) {
+          console.log(error);
+          req.error = error;
+          return next();
+        }
+        const context = { realtor: allRealtor, house: allHouse };
+        return res.render("index.ejs", context);
+      });
+
+    res.render('new.ejs', context)
+    });
+   
 });
 
 router.post("/", async (req, res) => {
     const createdHouse = req.body;
     try {
       const newHouse = await db.House.create(createdHouse);
-  
+     const realtor=req.body.realtor
       console.log(newHouse);
   
       res.redirect("/house");

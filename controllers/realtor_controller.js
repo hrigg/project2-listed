@@ -14,7 +14,7 @@ router.get('/', async (req, res, next) => {
    try{
     const allRealtor= await db.Realtor.find()
     const allHouses= await db.House.find()
-    res.render('realtor/index_realtor.ejs', {realtors: allRealtor, houses: allHouses})
+    res.render('realtor/index_realtor.ejs', {realtor: allRealtor, houses: allHouses})
    }
    catch(err){
     console.log(err)
@@ -60,7 +60,7 @@ router.get('/:id/edit', async (req,res, next)=>{
 
 router.post('/', async (req, res, next) => {
     try{
-        
+
         const newRealtor= await db.Realtor.create(req.body)
         //res.send(newRealtor)
         //res.redirect('/realtor/'+newRealtor._id)
