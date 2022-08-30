@@ -7,7 +7,13 @@
     <title>Realtor</title>
 </head>
 <body>
-    
+    <div>
+    <p class="control">
+        <form method="POST" action="/realtor/<%= realtor._id %>?_method=DELETE">
+            <input class="button is-danger" type="submit" value="Delete Realtor"/> 
+            </form>
+    </p>
+</div>
     Here will be a profile of a realtor that you clicked on 
 </body>
 </html>

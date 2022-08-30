@@ -78,9 +78,17 @@ router.post('/', async (req, res, next) => {
 
 //DELETE
 
-router.delete('/:id', async (req,res, next)=>{
-    res.send('realtor delete')
-})
+router.delete("/:realtorId", async (req, res) => {
+    try{
+  
+      const foundRealtor = await db.Realtor.findByIdAndDelete(req.params.realtorId)
+      console.log(foundRealtor)
+      return res.redirect("/realtor");
+  
+  }catch(err){
+      console.log(err)
+  }
+  });
 
 
 //PUT EDIT
