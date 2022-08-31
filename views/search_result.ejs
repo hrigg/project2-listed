@@ -18,10 +18,9 @@
         <% }%>
         
         <% if (typeof house !== 'undefined') { %>
-            <%= house[0].name %>
             
-            <img src='<%= house[0].imageOne %>'>   
-
-            <%}%>
+            <a href="/house/<%=house[0]._id%>"><%= house[0].name %></a>
+            <img src='<%= house[0].imageOne %>' style="max-width: 300px">   
+            <% } %>
 </body>  
 </html>

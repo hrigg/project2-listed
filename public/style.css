@@ -5,7 +5,8 @@ body{
 }
 
 img{
-    border: rgb(22, 118, 49) solid 2px
+    border: rgb(22, 118, 49) solid 2px;
+   
 }
 
 h2{ background-color: rgb(106, 216, 185);
