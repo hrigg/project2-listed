@@ -28,16 +28,12 @@
             <p>Beds: <%= house.beds %></p>
             <p>Baths: <%= house.baths%></p>
         </div>
+<div> REALTOR INFO
+<h2> <%= house.realtor.name %></h2>
         <br>
 <div> REALTOR INFO <br>
 
 See Realtor <%=house.realtor.name%>'s Profile: <a href="/realtor/<%=house.realtor._id%>" > <img src='<%= house.realtor.image %> ' style="max-width: 100px"> </a>
-
-
-
-
-
-
         <div>
             <p class="control">
                 <form method="POST" action="/house/<%= house._id %>?_method=DELETE">
