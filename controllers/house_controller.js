@@ -96,14 +96,26 @@ router.get('/dallas', async (req, res) => {
     });
 //TESTING SEARCH BUTTON ROUTE
 router.get('/search', async (req, res) => {
+ try{
+
     const { houseName } = req.query;
-   
-    const house = await db.House.find({name: houseName}).populate()
-   
-    console.log(house)
-    res.render('search_result.ejs', { house: house, houseName: house.name });
-   
-   })
+  
+const house = await db.House.find({name: houseName})
+
+    const houses= db.House
+
+    houses.find({name: houseName}, function(err, result){
+    if (err) {res.send('ERROR')}
+    if (result){
+        res.render('search_result.ejs', { house: house});
+    }
+})
+ }
+   catch(err){
+        console.log(err)
+    }
+}
+)
 
 router.get("/:houseIndex", async (req, res) => {
 
