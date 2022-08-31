@@ -11,16 +11,11 @@
     <title>Document</title>
 </head>
 <body> 
-    
-
-    <%if (typeof house === 'undefined'){ %>
-        <h1> ERROR</h1>
-        <% }%>
-        
-        <% if (typeof house !== 'undefined') { %>
+            <%for(let i=0; i<houses.length; i++){%>
+            <a href="/house/<%=houses[i]._id%>"><%= houses[i].name %></a>
+            <img src='<%= houses[i].imageOne %>' style="max-width: 300px">  
             
-            <a href="/house/<%=house[0]._id%>"><%= house[0].name %></a>
-            <img src='<%= house[0].imageOne %>' style="max-width: 300px">   
             <% } %>
+           
 </body>  
 </html>
