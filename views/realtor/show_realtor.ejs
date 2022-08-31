@@ -6,16 +6,16 @@
     <title>Realtor</title>
 </head>
 <body>
-  
-    Here will be a profile of a realtor that you clicked on 
     <div>
         
        <img src="<%=realtor.image%>" style="max-width: 200px;"></small>
         <h2> <%= realtor.name %></h2>
         <h3> <%= realtor.email %></h3>
         <h3> <%= realtor.note %></h3>
-<button><a href="<%= realtor._id %>/edit"> Edit Your Page</a></button>
-        Properties Listed Under <%= realtor.name %>
+        <p>
+    <button><a href="/house/new"> List with me! </a></button>
+        </p>
+        Properties Listed Under <%= realtor.name %>:
         <% for( let i = 0; i<house.length; i++){ %>
             <% const firstHouse = house[i] %>
             <h2> <%=i+1%></h2>
@@ -24,14 +24,12 @@
         <% } %>       
         <div>
             <p class="control">
+                <button><a href="<%= realtor._id %>/edit"> Edit Realtor Page</a></button>
                 <form method="POST" action="/realtor/<%= realtor._id %>?_method=DELETE">
                     <input class="button is-danger" type="submit" value="Delete Realtor"/> 
                     </form>
-            Houses with this realtor
             </p>
         </div>
     </div>
-
-   
 </body>
 </html>
