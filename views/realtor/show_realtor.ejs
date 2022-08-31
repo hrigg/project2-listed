@@ -14,15 +14,14 @@
         <h2> <%= realtor.name %></h2>
         <h3> <%= realtor.email %></h3>
         <h3> <%= realtor.note %></h3>
-<a href="<%=realtor._id%>/edit"> Edit Your Page</a>
+<button><a href="<%= realtor._id %>/edit"> Edit Your Page</a></button>
         Properties Listed Under <%= realtor.name %>
         <% for( let i = 0; i<house.length; i++){ %>
             <% const firstHouse = house[i] %>
             <h2> <%=i+1%></h2>
             <a href="/house/<%=firstHouse._id%>"><%= firstHouse.name %></a>
             <img src="<%=firstHouse.imageOne%>" style="max-width: 200px;"> 
-        <% } %> 
-        
+        <% } %>       
         <div>
             <p class="control">
                 <form method="POST" action="/realtor/<%= realtor._id %>?_method=DELETE">
