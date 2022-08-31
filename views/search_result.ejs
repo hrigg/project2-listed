@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include( 'partials/head.ejs' )  %>
+</head>
+    <body>
+        <%- include( 'partials/nav.ejs' )  %>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+    <h2>Search Results:</h2>
+            <%for(let i=0; i<houses.length; i++){%>
+            <a href="/house/<%=houses[i]._id%>"><%= houses[i].name %></a>
+            <img src='<%= houses[i].imageOne %>' style="max-width: 300px">
+            <% } %>
+            <h4><a href="/house">Couldn't find what you were looking for?</a></h4>
+</body> 
+</html>

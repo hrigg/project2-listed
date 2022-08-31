@@ -55,7 +55,16 @@ router.get('/:id/', async (req, res, next) => {
 //EDIT
 
 router.get('/:id/edit', async (req,res, next)=>{
-    res.send('realtor edit')
+    try{
+        const updatedRealtor= await db.Realtor.findById(req.params.id)
+        
+        let context= {realtor: updatedRealtor}
+        return res.render('realtor/edit_realtor.ejs', context)
+
+    }catch(error){
+        console.log(error)
+        next()
+    }
 })
 
 //POST ROUTE
@@ -96,7 +105,14 @@ router.delete("/:realtorId", async (req, res) => {
 //PUT EDIT
 
 router.put('/:id', async (req, res, next)=>{
-	res.send('realtor update')
+    try{
+        const updatedRealtor= await db.Realtor.findByIdAndUpdate(req.params.id, req.body)
+        
+        return res.redirect('/realtor')
+    }catch(error){
+        console.log(error)
+        next()
+    }
 })
 
 module.exports = router

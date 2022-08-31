@@ -6,7 +6,7 @@
 
         <section>
             <div>
-                <h2 class="title">All Listings</h2>
+                <h2 class="title">All Listings:</h2>
             </div>
         </section>
 
@@ -27,18 +27,8 @@
                 <h2>Dallas</h2>
                 <% for( let i = 0; i<dallasHouse.length; i++){ %>
                     <% const firstHouse = dallasHouse[i] %>
-
-                    <a href="/house/<%=firstHouse._id%>">
-                    <img src="<%=firstHouse.imageOne%>" style="max-width: 200px;"> </a>
-                    <%= firstHouse.name %>
                     <a href="/house/<%=firstHouse._id%>"><%= firstHouse.name %></a>
-                    <img src="<%=firstHouse.image%>" style="max-width: 200px;"> 
-
-                    <a href="/house/<%=firstHouse._id%>"><%= firstHouse.name %></a>
-                    <img src="<%=firstHouse.image%>" style="max-width: 200px;"> 
-                    <a href="/house/<%=firstHouse._id%>">
-                    <img src="<%=firstHouse.imageOne%>" style="max-width: 200px;"> </a>
-                    <%= firstHouse.name %>
+                    <img src="<%=firstHouse.imageOne%>" style="max-width: 200px;">  
 
                 <% } %> 
             </div>

@@ -5,9 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
+    <%- include( '../partials/head.ejs' )  %>
+  </head>
 <body>
-    Have an interested client? Enter your information here! 
+    <%- include( '../partials/nav.ejs' )  %>
+
+
+   Are you a realtor? Enter your information here! 
     <form method="POST" action="/realtor">
         <div>
             <label for="name">Realtor Name</label>
