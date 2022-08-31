@@ -101,7 +101,7 @@ router.get('/search', async (req, res) => {
     const house = await db.House.find({name: houseName}).populate()
    
     console.log(house)
-    res.render('search_result.ejs', { house: house, });
+    res.render('search_result.ejs', { house: house, houseName: house.name });
    
    })
 
