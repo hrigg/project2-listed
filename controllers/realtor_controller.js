@@ -10,6 +10,7 @@ const db = require('../models')
 console.log('realtor model test', db.Realtor)
 
 
+
 router.get('/', async (req, res, next) => {
    try{
     const allRealtor= await db.Realtor.find()
