@@ -6,13 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <%- include( '../partials/head.ejs' )  %>
+
   </head>
 <body>
     <%- include( '../partials/nav.ejs' )  %>
 
 
-   Are you a realtor? Enter your information here! 
-    <form method="POST" action="/realtor">
+  </head>
+<body class="realtorSignup" >
+ Have an interested client? Enter your information here! 
+    <form method="POST" action="/realtor" class="realtorform">
+
         <div>
             <label for="name">Realtor Name</label>
             <input
