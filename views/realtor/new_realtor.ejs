@@ -5,12 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
+    <%- include( '../partials/head.ejs' )  %>
+
+  </head>
 <body>
-    NEW FORM HERE
-    <form method="POST" action="/realtor">
+    <%- include( '../partials/nav.ejs' )  %>
+
+
+  </head>
+<body class="realtorSignup" >
+ Have an interested client? Enter your information here! 
+    <form method="POST" action="/realtor" class="realtorform">
+
         <div>
-            <label for="name">Your Name</label>
+            <label for="name">Realtor Name</label>
             <input
             class= "input" 
             type= "text"
@@ -20,7 +28,7 @@
             /> 
           </div>
         <div>
-            <label for="email">Your Email</label>
+            <label for="email">Realtor Email</label>
             <input
             class= "input" 
             type= "text"
@@ -30,11 +38,11 @@
             />
           </div>
           <div>
-            <label for="note">Note</label>
+            <label for="note">About Me</label>
             <input
             class= "input" 
             type= "text"
-            placeholder= "Do you have a client interested in this "
+            placeholder= "About Me"
             name= "note"
             id="note"
             /> 
@@ -49,24 +57,9 @@
             id="image"
             /> 
           </div>
-          <div>
-            <label for="city">City:</label>
-            <select name="city" id="city">
-                <option value="dc">D.C.</option>
-                <option value="chicago">Chicago</option>
-                <option value="dallas">Dallas</option>
-            </select>
-          </div>
+   
 
-        <div>
-            <select name="house">
-                <% house.forEach((house)=>{ %>
-                    <option value="<%= house._id%>"><%=house.name%>
-
-                    </option>
-              <%  }) %>
-            </select>
-        </div>
+     
         <!-- PROBLEM: how do i get prodcut id into form? -->
         <!-- pattern1- privde all products to form and let user select -->
             <!-- requires passing some product data to the index page -->

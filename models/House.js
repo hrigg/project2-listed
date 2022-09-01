@@ -11,7 +11,8 @@ const houseSchema = new mongoose.Schema({
     city: {type: String, required: [true, "city can not be empty"],},
     realtor: {
         type: mongoose.Types.ObjectId,
-        ref: "realtor",
+        ref: "Realtor",
+        required: [true, "You must have created a realtor profile"]
       },
 }, {timestamps: true,
 })

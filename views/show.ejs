@@ -18,19 +18,34 @@
     <main class="container">
         <div>
             <!-- <h2>Name: <%= house.name %></h2> -->
-            <small><img src="<%=house.image%>" style="max-width: 200px;"></small>
-            <small>Price <%= house.price %></small>
-            <small>City: <%= house.city %></small>
-            <small>Beds: <%= house.beds %></small>
-            <small>Baths: <%= house.baths%></small>
-        </div>
+            <p><img src="<%=house.imageOne%>" style="max-width: 200px;"></p>
 
+            <p><img src="<%=house.imageTwo%>" style="max-width: 200px;"></p>
+            <p><img src="<%=house.imageThree%>" style="max-width: 200px;"></p>
+
+            <p>Price <%= house.price %></p>
+            <p>City: <%= house.city %></p>
+            <p>Beds: <%= house.beds %></p>
+            <p>Baths: <%= house.baths%></p>
+        </div>
+        <br>
+<div> <h1>REALTOR INFO</h1>
+<h3> <%= house.realtor.name %></h3>
+        <br>
+</div>
+
+See Realtor <%=house.realtor.name%>'s Profile: <a href="/realtor/<%=house.realtor._id%>" > <img src='<%= house.realtor.image %> ' style="max-width: 100px"> </a>
+<div>
+    <button><a href="<%= house._id %>/edit"> Edit Listing</a></button>
+</div>
         <div>
             <p class="control">
                 <form method="POST" action="/house/<%= house._id %>?_method=DELETE">
                     <input class="button is-danger" type="submit" value="Delete Listing"/> 
                     </form>
+                
             </p>
+
         </div>
 
     </main>

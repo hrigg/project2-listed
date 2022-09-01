@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include( './partials/head.ejs' ) %> 
+<body>  
+<%- include( './partials/nav.ejs' )  %>
+    <title>Edit Realtor</title>
+</head>
+<body>
+    <form method="POST" action="/house/<%=house._id%>?_method=PUT">
+        <label>House Name</label>
+        <div>
+          <input
+            class="input"
+            type="text"
+            placeholder="name"
+            name="name"
+            value="<%= house.name %> "
+          />
+        </div>
+      </div>
+      
+    
+      <div>
+        <label>Image One</label>
+        <div class="control">
+          <input
+            class="input"
+            type="text"
+            placeholder=" image"
+            name="imageOne"
+            value="<%= house.imageOne %> "
+          />
+        </div>
+      </div>
+      <div>
+        <label>Image Two</label>
+        <div class="control">
+          <input
+            class="input"
+            type="text"
+            placeholder=" image"
+            name="imageTwo"
+            value="<%= house.imageTwo %> "
+          />
+        </div>
+      </div>  <div>
+        <label>Image Three</label>
+        <div class="control">
+          <input
+            class="input"
+            type="text"
+            placeholder=" image"
+            name="imageThree"
+            value="<%= house.imageThree %> "
+          />
+        </div>
+      </div>
+
+      <div>
+        <label>beds</label>
+        <div class="control">
+          <input
+            class="input"
+            type="text"
+            placeholder=" # beds"
+            name="beds"
+            value="<%= house.beds %> "
+          />
+        </div>
+        <div>
+            <label>baths</label>
+            <div class="control">
+              <input
+                class="input"
+                type="text"
+                placeholder=" # baths"
+                name="baths"
+                value="<%= house.baths %> "
+              />
+            </div>
+            <div>
+          <label>price</label>
+                <div class="control">
+                  <input
+                    class="input"
+                    type="text"
+                    placeholder="$$$$"
+                    name="price"
+                    value="<%= house.price %> "
+                  />
+                </div>
+                <div>
+
+                    </div>
+           
+   
+      
+          <div>
+       <input type="submit" value="Edit Your Listing">
+          </div>
+      </div>
+      </form>
+</body>
+</html>

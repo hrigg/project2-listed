@@ -7,15 +7,40 @@ router.use(express.urlencoded({ extended: false }));
 
 const db = require("../models");
 
-router.get('/new', (req, res) => {
-    res.render('new.ejs')
-});
+
+router.get('/new',async  (req, res) => {
+    // const realtor= db.Realtor.find()
+    // const context= {realtor, realtor}
+    const allHouse= await db.House.find()
+    const allRealtor= await db.Realtor.find()
+			// Here we are requesting all the products to add into the context
+    //   db.Realtor.find({}, (error, allRealtor) => {
+    //     if (error) {
+    //       console.log(error);
+    //       req.error = error;
+    //       return next();
+    //     }
+     const context = { realtor: allRealtor, house: allHouse };
+    //     return res.render("zindex.ejs", context);
+    //   });
+    console.log('realtor' , allRealtor)
+    res.render('new.ejs', context)
+    });
+   
+
+router.get('/new', async (req, res) => {
+    const foundHouse = await db.House.find()
+    const foundRealtor = await db.Realtor.find()
+        const context = { realtor: foundRealtor, house: foundHouse };
+        res.render('new.ejs', context);
+      });
+
 
 router.post("/", async (req, res) => {
     const createdHouse = req.body;
     try {
       const newHouse = await db.House.create(createdHouse);
-  
+        const realtor=req.body.realtor
       console.log(newHouse);
   
       res.redirect("/house");
@@ -50,20 +75,45 @@ router.get('/dc', async (req, res) => {
     } 
     });
 
-router.get('/chicago', (req, res) => {
-        res.render('chicaco_index.ejs')
+router.get('/chicago', async (req, res) => {
+        try {
+        const chicagoHouse= await db.House.find({city: 'chicago'})
+        const context= {chicagoHouse: chicagoHouse}
+        res.render('Cities/chicago_index.ejs', context);
+    } catch(err){
+        console.log(err)
+    } 
     });
 
-router.get('/dallas', (req, res) => {
-        res.render('dallas_index.ejs')
+router.get('/dallas', async (req, res) => {
+        try {
+        const dallasHouse= await db.House.find({city: 'dallas'})
+        const context= {dallasHouse: dallasHouse}
+        res.render('Cities/dallas_index.ejs', context);
+    } catch(err){
+        console.log(err)
+    } 
     });
+//TESTING SEARCH BUTTON ROUTE
+router.get('/search', async (req, res) => {
+ try{
+
+    const { houseName } = req.query;
+    const house = await db.House.find({name: houseName})
+    res.render('search_result.ejs', {houses: house});
+ }
+   catch(err){
+        console.log(err)
+    }
+}
+)
 
 router.get("/:houseIndex", async (req, res) => {
 
     try{
-  
-      const foundHouse = await db.House.findById(req.params.houseIndex)
-      res.render("show.ejs", { house: foundHouse, id: foundHouse._id });
+     const foundRealtor= await db.Realtor.find()
+      const foundHouse = await db.House.findById(req.params.houseIndex).populate('realtor')
+      res.render("show.ejs", { house: foundHouse, id: foundHouse._id , realtor: foundRealtor, realtorId: foundRealtor._id }, );
   
   }catch(err){
       console.log(err)
@@ -82,3 +132,32 @@ router.delete("/:houseId", async (req, res) => {
 }
 });
 module.exports = router;
+
+
+//EDIT
+
+router.get('/:id/edit', async (req,res, next)=>{
+    try{
+        const updatedHouse= await db.House.findById(req.params.id)
+        
+        let context= {house: updatedHouse}
+        return res.render('edit.ejs', context)
+
+    }catch(error){
+        console.log(error)
+        next()
+    }
+})
+
+
+//UPDATE POST EDIT
+router.put('/:id', async (req, res, next)=>{
+    try{
+        const updatedHouse= await db.House.findByIdAndUpdate(req.params.id, req.body)
+        const houseNew= await db.House.find()
+        return res.redirect('/house/')
+    }catch(error){
+        console.log(error)
+        next()
+    }
+})

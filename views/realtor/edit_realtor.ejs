@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include( '../partials/head.ejs' ) %> 
+<body>  
+<%- include( '../partials/nav.ejs' )  %>
+    <title>Edit Realtor</title>
+</head>
+<body>
+    <form method="POST" action="/realtor/<%=realtor._id%>?_method=PUT">
+        <label>Realtor Name</label>
+        <div>
+          <input
+            class="input"
+            type="text"
+            placeholder="name"
+            name="name"
+            value="<%= realtor.name %> "
+          />
+        </div>
+      </div>
+      
+    
+      <div>
+        <label>Image</label>
+        <div class="control">
+          <input
+            class="input"
+            type="text"
+            placeholder=" image"
+            name="image"
+            value="<%= realtor.image %> "
+          />
+        </div>
+      </div>
+
+      <div>
+        <label>Email</label>
+        <div class="control">
+          <input
+            class="input"
+            type="text"
+            placeholder=" email"
+            name="email"
+            value="<%= realtor.email %> "
+          />
+        </div>
+
+      <div>
+        <label>Note</label>
+        <div class="control">
+          <input
+            class="input"
+            type="text"
+            placeholder=" note"
+            name="note"
+            value="<%= realtor.note %> "
+          />
+        </div>
+      </div>
+      
+          <div>
+       <input type="submit" value="Edit Your Page">
+          </div>
+      </div>
+      </form>
+</body>
+</html>
