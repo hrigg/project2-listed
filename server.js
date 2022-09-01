@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 
-const PORT = 4000
+const PORT = 4001
 app.set('view engine', 'ejs')
 
 app.use(express.static('public'))
@@ -25,4 +25,4 @@ app.get('/', async (req, res) => {
     res.render(`home.ejs`, context)
 })
 
-app.listen(4000, () => console.log('starting server at port:', PORT))
+app.listen(4001, () => console.log('starting server at port:', PORT))
