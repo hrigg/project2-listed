@@ -132,3 +132,32 @@ router.delete("/:houseId", async (req, res) => {
 }
 });
 module.exports = router;
+
+
+//EDIT
+
+router.get('/:id/edit', async (req,res, next)=>{
+    try{
+        const updatedHouse= await db.House.findById(req.params.id)
+        
+        let context= {house: updatedHouse}
+        return res.render('edit.ejs', context)
+
+    }catch(error){
+        console.log(error)
+        next()
+    }
+})
+
+
+//UPDATE POST EDIT
+router.put('/:id', async (req, res, next)=>{
+    try{
+        const updatedHouse= await db.House.findByIdAndUpdate(req.params.id, req.body)
+        const houseNew= await db.House.find()
+        return res.redirect('/house/')
+    }catch(error){
+        console.log(error)
+        next()
+    }
+})
