@@ -15,8 +15,8 @@
 
     <form method="POST" action="/realtor" class="realtorform">
 
-        <div>
-            <label for="name">Realtor Name</label>
+        <div class="realtorInputs">
+            <label for="name"></label>
             <input
             class= "input" 
             type= "text"
@@ -26,9 +26,9 @@
             /> 
           </div>
         <div>
-            <label for="email">Realtor Email</label>
+            <label class="realtorEmail" for="email"></label>
             <input
-            class= "input" 
+            class= "input"
             type= "text"
             placeholder= "Email Address"
             name= "email"
@@ -36,7 +36,7 @@
             />
           </div>
           <div>
-            <label for="note">About Me</label>
+            <label for="note"></label>
             <input
             class= "input" 
             type= "text"
@@ -46,11 +46,11 @@
             /> 
           </div> 
           <div>
-            <label for="image">Your Picture </label>
+            <label for="image"></label>
             <input
             class= "input" 
             type= "text"
-            placeholder= "Your Pic"
+            placeholder= "Upload Your Photo"
             name= "image"
             id="image"
             /> 
@@ -62,7 +62,7 @@
         <!-- pattern1- privde all products to form and let user select -->
             <!-- requires passing some product data to the index page -->
         <!-- pattern2- provide a hidden input on a give page (product show page) -->
-        <button type="submit"> Add Your Info</button>
+        <button class="realtorButton" type="submit"> Add Your Info</button>
     </form>
 </body>
 </html>
