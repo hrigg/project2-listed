@@ -35,7 +35,7 @@ img{
 
 /* Realtor Signup styling */
 body.realtorSignup {
-    background-image: url(https://www.coloradohomesmag.com/content/uploads/2022/02/t/h/gerber-berend-williams-exterior-wide-entry-09-15-21-web-scaled.jpg);
+    background-image: url('https://www.coloradohomesmag.com/content/uploads/2022/02/t/h/gerber-berend-williams-exterior-wide-entry-09-15-21-web-scaled.jpg');
     background-color: whitesmoke;
     background-size: cover;
     background-attachment: fixed;
@@ -66,4 +66,3 @@ form.realtorform{
     filter: blur(10px);
     margin: -20px;
     }
-
