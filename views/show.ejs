@@ -18,19 +18,29 @@
     <main class="container">
         <div>
             <!-- <h2>Name: <%= house.name %></h2> -->
-            <small><img src="<%=house.image%>" style="max-width: 200px;"></small>
-            <small>Price <%= house.price %></small>
-            <small>City: <%= house.city %></small>
-            <small>Beds: <%= house.beds %></small>
-            <small>Baths: <%= house.baths%></small>
-        </div>
+            <p><img src="<%=house.imageOne%>" style="max-width: 200px;"></p>
 
+            <p><img src="<%=house.imageTwo%>" style="max-width: 200px;"></p>
+            <p><img src="<%=house.imageThree%>" style="max-width: 200px;"></p>
+
+            <p>Price <%= house.price %></p>
+            <p>City: <%= house.city %></p>
+            <p>Beds: <%= house.beds %></p>
+            <p>Baths: <%= house.baths%></p>
+        </div>
+<div> REALTOR INFO
+<h2> <%= house.realtor.name %></h2>
+        <br>
+<div> REALTOR INFO <br>
+
+See Realtor <%=house.realtor.name%>'s Profile: <a href="/realtor/<%=house.realtor._id%>" > <img src='<%= house.realtor.image %> ' style="max-width: 100px"> </a>
         <div>
             <p class="control">
                 <form method="POST" action="/house/<%= house._id %>?_method=DELETE">
                     <input class="button is-danger" type="submit" value="Delete Listing"/> 
                     </form>
             </p>
+
         </div>
 
     </main>
