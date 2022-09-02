@@ -170,27 +170,6 @@ form.realtorform{
     margin: -20px;
     }
 
-<<<<<<< HEAD
-    body {
-        /* background-image: url('https://www.coloradohomesmag.com/content/uploads/2022/02/t/h/gerber-berend-williams-exterior-wide-entry-09-15-21-web-scaled.jpg'); */
-        background-color: rgb(126, 171, 213);
-        background-size: cover;
-        background-attachment: fixed;
-    }
-    /* form{
-        position:fixed;
-        right: 23%;
-        top: 27%;
-        width: 50%;
-        height: 50%;
-        box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
-        z-index: 2;
-        background: inherit;
-        overflow: hidden;
-        } */
-
-        
-=======
     .realtorButton {
         position: relative;
         left: 40%;
@@ -257,4 +236,3 @@ form.realtorform{
   text-align: center;
   border-radius:2px;
 }
->>>>>>> 3ab2d0f59fadb38b817b01e77207a63942388e6a
