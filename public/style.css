@@ -421,6 +421,18 @@ form.realtorform{
     box-shadow:1px 1px 3px;
     align-content: center;
     top: 20%;
+   
+
+}
+.showPic{
+    position:relative;
+    display: inline;
+    padding: 20px;
+    top: 20%;
+    bottom: 20%;
+  
+
+
 }
 .houseInfo {
   position:absolute;
@@ -555,6 +567,7 @@ margin-top: 100px;
         align-content: center;
         bottom: 10%;
         right: 10%;
+        display: inline-block;
     background-color: aqua;
     
 }
