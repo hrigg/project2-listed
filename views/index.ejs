@@ -24,11 +24,13 @@
                 </div>
                 <div class="containerChi">
                 <h2 id="allListingsCity">Chicago</h2>
+                <div id="listingsList">
                 <% for( let i = 0; i<chicagoHouse.length; i++){ %>
                     <% const firstHouse = chicagoHouse[i] %>
                     <a href="/house/<%=firstHouse._id%>"><%= firstHouse.name %></a>
                     <img src="<%=firstHouse.imageOne%>" style="max-width: 200px;"> 
                 <% } %> 
+            </div>
             </div>
                 <div class="containerDal">
                     <h2 id="allListingsCity">Dallas</h2>
@@ -36,7 +38,7 @@
                         <% for( let i = 0; i<dallasHouse.length; i++){ %>
                         <% const firstHouse = dallasHouse[i] %>
                         <a href="/house/<%=firstHouse._id%>"><%= firstHouse.name %></a>
-                        <img src="<%=firstHouse.imageOne%>" >
+                        <img src="<%=firstHouse.imageOne%>" style="max-width: 200px;">
                         <% } %> 
                     </div>
                 </div>

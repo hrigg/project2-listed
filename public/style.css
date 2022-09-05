@@ -392,12 +392,14 @@ form.realtorform{
   resize: vertical;
   border: none;
   outline: none;
-  box-shadow:4px 4px 5px;
   align-content: center;
-  left: 40%;
+  left: 20%;
+  right: 20%;
   top: 10%;
   text-align: center;
   border-radius:2px;
+  position: absolute;
+  text-decoration: none;
 }
 
 
@@ -419,6 +421,18 @@ form.realtorform{
     box-shadow:1px 1px 3px;
     align-content: center;
     top: 20%;
+   
+
+}
+.showPic{
+    position:relative;
+    display: inline;
+    padding: 20px;
+    top: 20%;
+    bottom: 20%;
+  
+
+
 }
 .houseInfo {
   position:absolute;
@@ -553,6 +567,7 @@ margin-top: 100px;
         align-content: center;
         bottom: 10%;
         right: 10%;
+        display: inline-block;
     background-color: aqua;
 }
 
