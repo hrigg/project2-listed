@@ -11,11 +11,13 @@
         </section>
 
         <main class="container">
-            <div> 
+            <div class="chiLoop"> 
                 <% for( let i = 0; i<chicagoHouse.length; i++){ %>
                     <% const firstHouse = chicagoHouse[i] %>
+                    <div class="oneChiLoop">
                     <a href="/house/<%=firstHouse._id%>"><%= firstHouse.name %></a>
                     <img src="<%=firstHouse.imageOne%>" style="max-width: 200px;"> 
+                     </div>
                 <% } %>
             </div>
         </main>

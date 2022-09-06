@@ -29,9 +29,11 @@
         <div id="propertiesInfoList"><hr>
             <% for( let i = 0; i<house.length; i++){ %>
                 <% const firstHouse = house[i] %>
+                <div class="realtorShowLoop">
                 <h2> <%=i+1%></h2></hr>
                 <a href="/house/<%=firstHouse._id%>"><%= firstHouse.name %></a>
-                <img src="<%=firstHouse.imageOne%>" style="max-width: 200px;"> 
+                <img src="<%=firstHouse.imageOne%>" style="max-width: 200px; max-height: 100px;"> 
+            </div>
             <% } %> 
         </div>
     </div>      

@@ -7,9 +7,11 @@
             <div class="realtorIndexDisplay">
                 <% for( let i = 0; i<realtor.length; i++){ %>
                     <% const firstRealtor = realtor[i] %>
+                    <div class="realtorIndexLoop">
                     <a href="/realtor/<%=firstRealtor._id%>"><%= firstRealtor.name %>
-                    <img src="<%=firstRealtor.image%>" style="max-width: 200px;"></a> 
+                    <img src="<%=firstRealtor.image%>" style="max-width: 200px; max-height: 200px;"></a> 
                     <br>
+                    </div>
                 <% } %>
                 <p>
                 <a href="/realtor/new"> Join our Realtor database! </a>

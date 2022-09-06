@@ -28,7 +28,11 @@
     filter: blur(10px);
     margin: -20px;
     }
+a{
+    text-decoration: none;
+    color: black;
 
+}
 
     .topnav a {
         float: left;
@@ -544,7 +548,7 @@ margin-top: 100px;
 
 .realtorProfileInfo {
     position:absolute;
-        width: 193vh;
+        width: 97%;
         height: 30%;
         resize: vertical;
         border: none;
@@ -569,6 +573,8 @@ margin-top: 100px;
         right: 10%;
         display: inline-block;
 }
+
+
 /* NEW HOUSE */
 
 .editHouseBody {
@@ -584,9 +590,15 @@ margin-top: 100px;
 }
 .chiIndexPageBuffer{
     margin-top: 100px;
+    background-image: url('https://images.pexels.com/photos/1797195/pexels-photo-1797195.jpeg');
+    background-size: cover;
+    color: white;
 }
 .dallasBuffer{
     margin-top: 100px;
+    background-image: url('https://images.pexels.com/photos/45182/dallas-texas-skyline-dusk-45182.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+    color: white;
+    background-size: cover;
 }
 .dcBuffer{
     margin-top: 100px;
@@ -605,9 +617,17 @@ margin-top: 100px;
 .oneLoopDc{
     text-align: center;
 }
+.chiLoop a{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    
+}
 
-
-
+.oneChiLoop{
+    text-align: center; 
+}
 #profilePic {
     position: absolute;
     width: 100px;
@@ -616,7 +636,9 @@ margin-top: 100px;
     padding-top: 1%;
 }
 #profileInfo {
-    position: absolute;
+    position: absolute ;
+    left: 35%;
+    top: 5%;
     padding-left: 1%;
     bottom: 10%;
     text-align: center;
@@ -641,9 +663,27 @@ position:absolute;
     text-align: center;
 }
 
+.realtorShowLoop{
+    display: inline-block;
+    
+}
+.realtorShowLoop a{
+    display: block;
+    text-align: center;
+
+}
+.realtorIndexLoop{
+    display: inline-block;
+    text-align: center
+}
+.realtorIndexLoop a{
+    display: block;
+    text-align: center;
+}
+
 #listWithMe {
     position: absolute;
-        left: 2.5%;
+        left: 37%;
         bottom: 7px;
         border: 0;
         box-shadow: 1px 1px 2px;
@@ -663,8 +703,13 @@ position:absolute;
         height: 5vh;
         border-radius:2px;
         text-decoration: none;
-        background-color: #ffffff;}
-
+        background-color: #ffffff;
+        margin-right: 10px;
+    }
+    #realtorInfoEditBtn a{
+        text-decoration: none;
+        color: black;
+    }
 
    #realtorInfoDeleteBtn {
         position: absolute;
@@ -677,6 +722,7 @@ position:absolute;
         border-radius:2px;
         text-decoration: none;
         background-color: #ffffff;
+        margin-left: 10px;
    }
 
 
