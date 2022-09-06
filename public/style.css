@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
 .topnav{
     width: 100%;
     height: 5%;
@@ -10,6 +12,7 @@
     overflow: hidden;
     padding-top: .5em;
     padding-bottom: .5em;
+    margin-bottom: 5%;
     }
 
     .topnav:before {
@@ -29,27 +32,201 @@
 
     .topnav a {
         float: left;
-        color: #f2f2f2;
+        color: #000000;
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
         font-size: 17px;
       }
       .topnav a:hover {
-        background-color: #ddd;
-        color: rgba(255, 255, 255, 0.31);
+        color: rgb(255, 255, 255);
+        font-weight: 1000;
+        text-shadow: 0 0 1rem rgb(255, 255, 255);
       }
       .navbarlinks {
         float: right;
       }
-body{
-    background-color: whitesmoke;
+a.logo {
+    position:relative;
+    top: -50%;
 }
 
-
 /*Home Page styling */
+.topNavHome{
+    width: 100%;
+    height: 7%;
+    right:0%;
+    top: 0%;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    position: absolute;
+    z-index: 1;
+    background: inherit;
+    overflow: hidden;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    margin-bottom: 5%;
+    }
+
+    .topNavHome:before {
+    content: "";
+    position: absolute;
+    background: inherit;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+    filter: blur(10px);
+    margin: -20px;
+    }
+
+
+    .topNavHome a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+      .topNavHome a:hover {
+        color: rgb(255, 255, 255);
+        font-weight: 1000;
+        text-shadow: 0 0 1rem rgb(255, 255, 255);
+      }
+      .navbarlinks {
+        float: right;
+      }
+a.logo {
+    position:relative;
+    top: -50%;
+}
+.homePage{
+    background-size: cover;
+    background-image: url("https://images.unsplash.com/photo-1627141234469-24711efb373c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2938&q=80");
+}
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
+.search {
+position: absolute;
+left: 40%;
+top: 10%;}
+
+.bar{
+    width: 100%;
+    height: 5%;
+    resize: vertical;
+    border: none;
+    outline: none;
+    box-shadow:2px 2px 5px;
+    border-radius:2px;
+}
+
+.homeCarousel {
+    position: absolute;
+    left: 10%;
+    top: 20%;
+    width: 80%;
+    height: 30%;
+    box-shadow: 1px 1px 3px;
+}
+
+.homeCarousel img {
+ max-width: 100%;
+ max-height: 100%;
+}
+
+.dcHome {
+width: 250px;
+height: 150px;
+resize: vertical;
+border: none;
+outline: none;
+box-shadow:2px 2px 5px;
+position:absolute;
+left: 5%;
+bottom: 10%;
+border-radius:2px;
+}
+.dcHome img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    background-size: cover;
+}
+.dcHome h1 {
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    object-fit: contain;
+    text-align: center;
+}
+.dallasHome {
+    width: 250px;
+    height: 150px;
+    resize: vertical;
+    border: none;
+    outline: none;
+    box-shadow:2px 2px 5px;
+    position:absolute;
+    left: 40%;
+    bottom: 10%;
+    border-radius:2px;
+    text-align: center;
+    }
+.dallasHome h1 {
+    position:absolute;
+    top: 50%;
+    right: -1%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+.dallasHome img {
+    width: 100%;
+    height: 100%;
+    object-fit:fill;
+    background-size: cover;
+}
+.chiHome {
+        width: 250px;
+        height: 150px;
+        resize: vertical;
+        border: none;
+        outline: none;
+        box-shadow:2px 2px 5px;
+        position:absolute;
+        left: 75%;
+        bottom: 10%;
+        border-radius:2px;
+        }
+    .chiHome img {
+    width: 100%;
+    height: 100%;
+    object-fit:fill;
+    background-size: cover;
+    }
+    .chiHome h1 {
+        position:absolute;
+        top: 50%;
+        right: -1%;
+        transform: translate(-50%, -50%);
+        color: white;
+    }
 
 /* Realtor Signup styling */
+.welcomeScript {
+    text-align: center;
+    position: fixed;
+    top: 10%;
+    right: 45%;
+    color: white;
+    text-shadow: 0 0 1rem rgb(255, 255, 255);
+}
 
 body.realtorSignup {
     background-image: url('https://www.coloradohomesmag.com/content/uploads/2022/02/t/h/gerber-berend-williams-exterior-wide-entry-09-15-21-web-scaled.jpg');
@@ -59,14 +236,15 @@ body.realtorSignup {
 }
 form.realtorform{
     position:fixed;
-    right: 23%;
+    right: 20%;
     top: 27%;
-    width: 50%;
-    height: 50%;
+    width: 60%;
+    height: 60%;
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
     z-index: 2;
     background: inherit;
     overflow: hidden;
+    border-radius:2px;
     }
     form.realtorform:before {
     content: "";
@@ -81,3 +259,316 @@ form.realtorform{
     filter: blur(10px);
     margin: -20px;
     }
+
+.realtorButton {
+        position: relative;
+        left: 40%;
+        top: 80%;
+        border: 0;
+        box-shadow: 4px 4px 5px;
+        width: 20%;
+        height: 10%;
+        border-radius:2px;
+    }
+
+.input#note {
+    width: 50%;
+    height: 40%;
+  resize: vertical;
+  border: none;
+  outline: none;
+  box-shadow:4px 4px 5px;
+  position:absolute;
+  left: 45%;
+  top: 30%;
+  text-align: center;
+  border-radius:2px;
+}
+
+
+.input#email {
+    position: absolute;
+        left: 72%;
+        top: 10%;
+        border: none;
+        outline: none;
+        box-shadow: 4px 4px 5px;
+        width: 23%;
+        height: 8%;
+        border-radius:2px;
+        text-align: center;
+
+}
+
+.input#name {
+    position: absolute;
+        left: 45%;
+        top: 10%;
+        border: none;
+        outline: none;
+        box-shadow: 4px 4px 5px;
+        width: 24%;
+        height: 8%;
+        border-radius:2px;
+        text-align: center;
+}
+
+.input#image {
+    width: 30%;
+    height: 60%;
+  resize: vertical;
+  border: none;
+  outline: none;
+  box-shadow:4px 4px 5px;
+  position:absolute;
+  left: 5%;
+  top: 10%;
+  text-align: center;
+  border-radius:2px;
+}
+
+/* "House" or all listings page styling */
+
+.allListingsPage {
+    padding-top: 2%;
+}
+
+.allListingsTitle {
+    text-align: center;
+}
+
+.containerDC {
+    margin: 0 auto;
+    margin-top: 50px;;
+    height: 80vh;
+    width: 40vh;
+    background: #F2F2F2;
+    border: none;
+    box-shadow: 1px 1px 2px #fff inset, -1px -1px 2px #fff inset;
+    position: absolute;
+    left: 2%;
+    display: flex;
+            align-items: center;
+            justify-content: center;
+    }
+
+.containerChi{
+        margin: 0 auto;
+        margin-top: 50px;;
+        height: 80vh;
+        width: 40vh;
+        background: #F2F2F2;
+        border: none;
+        box-shadow: 1px 1px 2px #fff inset, -1px -1px 2px #fff inset;
+        position: absolute;
+        right: 40%;
+        display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+.containerDal{
+            margin: 0 auto;
+            margin-top: 50px;;
+            height: 80vh;
+            width: 40vh;
+            background: #F2F2F2;
+            border: none;
+            box-shadow: 1px 1px 2px #fff inset, -1px -1px 2px #fff inset;
+            position: absolute;
+            right: 2%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            }
+    #allListingsCity {
+        text-align: center;
+        padding-top: 1%;
+        position: absolute;
+        top: 1%;
+    }
+#listingsList {
+    width: 60%;
+    height: 30%;
+  resize: vertical;
+  border: none;
+  outline: none;
+  align-content: center;
+  left: 20%;
+  right: 20%;
+  top: 10%;
+  text-align: center;
+  border-radius:2px;
+  position: absolute;
+  text-decoration: none;
+}
+
+
+/* Show ejs styling */
+.homeInfoPage {
+    text-align: center;
+}
+
+.homeTitle {
+    margin-top: 5%;
+}
+.homePics {
+    position:absolute;
+    width: 194.5vh;
+    height: 30%;
+    resize: vertical;
+    border: none;
+    outline: none;
+    box-shadow:1px 1px 3px;
+    align-content: center;
+    top: 20%;
+   
+
+}
+.showPic{
+    position:relative;
+    display: inline;
+    padding: 20px;
+    top: 20%;
+    bottom: 20%;
+  
+
+
+}
+.houseInfo {
+  position:absolute;
+  width: 150vh;
+  height: 30%;
+  resize: vertical;
+  border: none;
+  outline: none;
+  box-shadow:1px 1px 3px;
+  align-content: center;
+  bottom: 10%;
+  right: 10%;
+}
+
+#editHomeListing {
+    position: absolute;
+        left: 1%;
+        bottom: 15px;
+        border: 0;
+        box-shadow: 1px 1px 2px;
+        width: 15vh;
+        height: 5vh;
+        border-radius:2px;
+        text-decoration: none;
+        background-color: #ffffff;
+    }
+    #homeDelete {
+        position: absolute;
+        left: 10%;
+        bottom: 15px;
+        border: 0;
+        box-shadow: 1px 1px 2px;
+        width: 15vh;
+        height: 5vh;
+        border-radius:2px;
+        text-decoration: none;
+        background-color: #ffffff;
+    }
+
+.homeRealtorInfo {
+            height: 90%;
+            width: 12%;
+            background: #F2F2F2;
+            border: none;
+            box-shadow: 1px 1px 2px #fff inset, -1px -1px 2px #fff inset;
+            position: absolute;
+            top: 5%;
+            right: 1%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+}
+
+#realtorInfoPic {
+position: absolute;
+width: 100px;
+height: 80%;
+top: 10px;
+}
+
+#realtorInfoPic img {
+    width: 100%;
+    height: 100%;
+    object-fit:fill;
+    background-size: cover;
+    }
+
+#realtorInfoName {
+    position: absolute;
+    bottom: 10px;
+}
+
+#homePrice {
+    position: absolute;
+    bottom:20%;
+    left: 5%;
+}
+
+#homeCity {
+    position: absolute;
+    top: 10%;
+    left: 5%
+}
+
+#homeBeds {
+    position: absolute;
+    left: 30%;
+    top: 10%;
+}
+
+#homeBaths {
+    position: absolute;
+    left: 30%;
+    bottom: 20%;
+}
+
+
+/* index realtor */
+
+.realtorIndexDisplay {
+
+margin-top: 100px;
+
+}
+
+/* Show realtor page */
+
+
+.realtorProfileInfo {
+    position:absolute;
+        width: 193vh;
+        height: 30%;
+        resize: vertical;
+        border: none;
+        outline: none;
+        box-shadow:1px 1px 3px;
+        align-content: center;
+        top: 10%;
+        right: 1%;
+    background-color: aquamarine;
+}
+
+.realtorInfoProperties {
+    position:absolute;
+        width: 150vh;
+        height: 30%;
+        resize: vertical;
+        border: none;
+        outline: none;
+        box-shadow:1px 1px 3px;
+        align-content: center;
+        bottom: 10%;
+        right: 10%;
+        display: inline-block;
+    background-color: aqua;
+    
+}
+

@@ -3,53 +3,36 @@
 
 <!-- head -->
 <%- include( 'partials/head.ejs' )  %>
+<%- include( 'partials/nav.ejs' )  %>
 
-<body>
-    <%- include( 'partials/nav.ejs' )  %>
-
-    <section>
-        <div>
-            <h2 class="title">House: <%=house.name%>
-            </h2>
-
-        </div>
-    </section>
-
-    <main class="container">
-        <div>
+<body class="homeInfoPage">
+    <h2 class="homeTitle">House: <%=house.name%></h2>
+        <div class="homePics">
             <!-- <h2>Name: <%= house.name %></h2> -->
-            <p><img src="<%=house.imageOne%>" style="max-width: 200px;"></p>
-
-            <p><img src="<%=house.imageTwo%>" style="max-width: 200px;"></p>
-            <p><img src="<%=house.imageThree%>" style="max-width: 200px;"></p>
-
-            <p>Price <%= house.price %></p>
-            <p>City: <%= house.city %></p>
-            <p>Beds: <%= house.beds %></p>
-            <p>Baths: <%= house.baths%></p>
+            <p class="showPic"><img src="<%=house.imageOne%>" style="max-width: 250px;"></p>
+            <p class="showPic"><img src="<%=house.imageTwo%>" style="max-width: 250px;"></p>
+            <p class="showPic"><img src="<%=house.imageThree%>" style="max-width: 250px;"></p>
         </div>
-        <br>
-<div> <h1>REALTOR INFO</h1>
-<h3> <%= house.realtor.name %></h3>
-        <br>
-</div>
-
-See Realtor <%=house.realtor.name%>'s Profile: <a href="/realtor/<%=house.realtor._id%>" > <img src='<%= house.realtor.image %> ' style="max-width: 100px"> </a>
-<div>
-    <button><a href="<%= house._id %>/edit"> Edit Listing</a></button>
-</div>
+            <div class="houseInfo">
+                <p id="homePrice">Price: $<%= house.price %></p>
+                <p id="homeCity">City: <%= house.city %></p>
+                <p id="homeBeds">Beds: <%= house.beds %></p>
+                <p id="homeBaths">Baths: <%= house.baths%></p>
+                    <div class="homeRealtorInfo"> 
+                        <a id="realtorInfoPic" href="/realtor/<%=house.realtor._id%>" > <img src='<%= house.realtor.image %> ' style="max-width: 100px"> </a>
+                        <div id="realtorInfoName">
+                            Realtor <%=house.realtor.name%>'s Profile! 
+                        </div> 
+                    </div>
+            </div>
+    <button id="editHomeListing"><a href="<%= house._id %>/edit"> Edit Listing</a></button>
         <div>
-            <p class="control">
+            <p  class="control" >
                 <form method="POST" action="/house/<%= house._id %>?_method=DELETE">
-                    <input class="button is-danger" type="submit" value="Delete Listing"/> 
-                    </form>
-                
+                    <input id="homeDelete" class="button is-danger" type="submit" value="Delete Listing"/> 
+                </form>
             </p>
-
         </div>
-
-    </main>
-
 </body>
 
 </html>
