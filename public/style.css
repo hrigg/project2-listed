@@ -769,3 +769,223 @@ position:absolute;
     background-attachment: fixed;
     background-image: url("https://static.dezeen.com/uploads/2018/08/high-desert-modern-deforest-architects-architecture-house-oregon-usa_dezeen_2364_hero.jpg");
 }
+
+
+
+/*home edit ejs */
+
+.editHomeFormBody {
+ background-attachment: fixed;
+ background-size: cover;
+ background-image: url("https://cdn.homedit.com/wp-content/uploads/2021/02/Forest-House-with-Lake-views-and-Eco-Roof.jpeg") ;
+
+}
+
+form.editHomeForm{
+    position:fixed;
+    right: 20%;
+    top: 27%;
+    width: 60%;
+    height: 60%;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    background: inherit;
+    overflow: hidden;
+    border-radius:2px;
+    }
+    form.editHomeForm:before {
+    content: "";
+    position: absolute;
+    background: inherit;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+    filter: blur(10px);
+    margin: -20px;
+    }
+
+
+    #editHomeButton {
+        position: absolute;
+        left: 40%;
+        bottom: 15px;
+        border: 0;
+        box-shadow: 4px 4px 5px;
+        width: 20%;
+        height: 10%;
+        border-radius:2px;
+    }
+
+    
+    #houseEditImg1{
+        position: absolute;
+        left: 150px;
+        top: 150px;
+        border: 0;
+        box-shadow: 4px 4px 5px;
+        width: 20%;
+        height: 5%;
+        border-radius:2px;
+    }
+    #houseEditImg2{
+        position: absolute;
+        left: 455px;
+        top: 150px;
+        border: 0;
+        box-shadow: 4px 4px 5px;
+        width: 20%;
+        height: 5%;
+        border-radius:2px;
+    }
+    #houseEditImg3{
+        position: absolute;
+        right: 150px;
+        top: 150px;
+        border: 0;
+        box-shadow: 4px 4px 5px;
+        width: 20%;
+        height: 5%;
+        border-radius:2px;
+    }
+    #houseEditBeds{
+        position: absolute;
+        left: 325px;
+        bottom: 160px;
+        border: 0;
+        box-shadow: 4px 4px 5px;
+        width: 20%;
+        height: 5%;
+        border-radius:2px;
+    }
+    #houseEditBaths{
+        position: absolute;
+        right: 325px;
+        bottom: 160px;
+        border: 0;
+        box-shadow: 4px 4px 5px;
+        width: 20%;
+        height: 5%;
+        border-radius:2px;
+    }
+    #houseEditPrice {
+        position: absolute;
+        right: 60px;
+        bottom: 160px;
+        border: 0;
+        box-shadow: 4px 4px 5px;
+        width: 20%;
+        height: 5%;
+        border-radius:2px;
+    }
+    
+    
+    #editHomeName {
+        position: absolute;
+        left: 60px;
+        bottom: 160px;
+        border: 0;
+        box-shadow: 4px 4px 5px;
+        width: 20%;
+        height: 5%;
+        border-radius:2px;
+    }
+
+
+#img1 {
+    position: absolute;
+    left: 220px;
+    top: 120px;
+    color: white;
+}
+#img2{
+    position: absolute;
+    left: 520px;
+    top: 120px;
+    color: white;
+}
+#img3{
+    position: absolute;
+    right: 240px;
+    top: 120px;
+    color: white;
+}
+#bedNum {
+    position: absolute;
+    left: 410px;
+    bottom: 200px;
+    color: white;
+}
+#bathNum {
+    position: absolute;
+    right: 440px;
+    bottom: 200px;
+    color: white;
+}
+#housePriceLbl {
+    position: absolute;
+    right: 170px;
+    bottom: 200px;
+    color: white;
+}
+#houseName {
+    position: absolute;
+    left: 120px;
+    bottom: 200px;
+    color: white;
+}
+
+/* New Home Form */
+
+.newHomeFormBody {
+    background-size: cover;
+background-image: url("https://cdn.decoist.com/wp-content/uploads/2021/06/Two-story-black-house-witg-glass-walls-in-the-middle-of-the-forest-19247.jpg");
+    background-attachment: fixed;
+}
+
+form.newHomeForm{
+    position:fixed;
+    right: 20%;
+    top: 27%;
+    width: 60%;
+    height: 60%;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    background: inherit;
+    overflow: hidden;
+    border-radius:2px;
+    }
+    form.newHomeForm:before {
+    content: "";
+    position: absolute;
+    background: inherit;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+    filter: blur(10px);
+    margin: -20px;
+    }
+
+#homeCityLocation {
+position: absolute;
+top: 40px;
+left: 300px;
+text-shadow: 0 0 1rem rgb(0, 0, 0);
+font-size: larger;
+color: white;
+}
+
+#realtorChoice {
+position: absolute;
+text-shadow: 0 0 1rem rgb(0, 0, 0);
+font-size: larger;
+font-weight: bold;
+color: rgb(255, 255, 255);
+top: 40px;
+right: 300px;
+}
