@@ -24,5 +24,5 @@ app.get('/', async (req, res) => {
     const context = {house: house, houseImage: houseImage}
     res.render(`home.ejs`, context)
 })
-app.listen(process.env.PORT || 4001);
+app.listen(process.env.PORT || 4002);
 //app.listen(4001, () => console.log('starting server at port:', PORT))

@@ -8,31 +8,38 @@
 <body>
     <div class="realtorProfileInfo">
         <div id="profileCard">
-            <img src="<%=realtor.image%>" style="max-width: 200px;"></small>
-             <h2> <%= realtor.name %></h2>
-             <h3> <%= realtor.email %></h3>
+            <div id="profilePic">
+                <img src="<%=realtor.image%>" style="max-width: 200px;"></small>
+            </div>
+            <div id="profileInfo">
+                <h2> <%= realtor.name %></h2>
+                <h3> <%= realtor.email %></h3>
+            </div>
         </div>
         <div id="aboutRealtor">
-            <h3> <%= realtor.note %></h3>
+            <h5>About Me</h5>
+            <h4> <%= realtor.note %></h4>
         </div>
         <p>
-            <button><a href="/house/new"> List with me! </a></button>
+            <button id="listWithMe"><a href="/house/new"> List with me! </a></button>
         </p>
     </div>
     <div class="realtorInfoProperties">
         Properties Listed Under <%= realtor.name %>:
-        <% for( let i = 0; i<house.length; i++){ %>
-            <% const firstHouse = house[i] %>
-            <h2> <%=i+1%></h2>
-            <a href="/house/<%=firstHouse._id%>"><%= firstHouse.name %></a>
-            <img src="<%=firstHouse.imageOne%>" style="max-width: 200px;"> 
-        <% } %> 
+        <div id="propertiesInfoList"><hr>
+            <% for( let i = 0; i<house.length; i++){ %>
+                <% const firstHouse = house[i] %>
+                <h2> <%=i+1%></h2></hr>
+                <a href="/house/<%=firstHouse._id%>"><%= firstHouse.name %></a>
+                <img src="<%=firstHouse.imageOne%>" style="max-width: 200px;"> 
+            <% } %> 
+        </div>
     </div>      
         <div>
             <p class="control">
-                <button><a href="<%= realtor._id %>/edit"> Edit Realtor Page</a></button>
+                <button id="realtorInfoEditBtn"><a href="<%= realtor._id %>/edit"> Edit Realtor Page</a></button>
                 <form method="POST" action="/realtor/<%= realtor._id %>?_method=DELETE">
-                    <input class="button is-danger" type="submit" value="Delete Realtor"/> 
+                    <input id="realtorInfoDeleteBtn" class="button is-danger" type="submit" value="Delete Realtor"/> 
                 </form>
             </p>
         </div>
