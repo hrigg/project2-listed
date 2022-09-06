@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 	<%- include( '../partials/head.ejs' ) %> 
-    <body>  
+     
 		<%- include( '../partials/nav.ejs' )  %>
-
+        <body class="dcBuffer"> 
         <section>
             <div>
                 <h2 class="title">D.C. Listings</h2>
@@ -11,11 +11,13 @@
         </section>
 
         <main class="container">
-            <div>
+            <div class="dcLoop">
                 <% for( let i = 0; i<dcHouse.length; i++){ %>
                     <% const firstHouse = dcHouse[i] %>
-                    <a href="/house/<%=firstHouse._id%>"><%= firstHouse.name %></a> 
+                   <div class="oneLoopDc">
                     <img src="<%=firstHouse.imageOne%>" style="max-width: 200px;">
+                    <a href="/house/<%=firstHouse._id%>"><%= firstHouse.name %></a> 
+                </div>
                 <% } %>
             </div>
         </main>

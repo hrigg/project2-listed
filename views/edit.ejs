@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include( './partials/head.ejs' ) %> 
-<body>  
 <%- include( './partials/nav.ejs' )  %>
     <title>Edit Realtor</title>
 </head>
-<body>
-    <form method="POST" action="/house/<%=house._id%>?_method=PUT">
-        <label>House Name</label>
-        <div>
+<body class="editHomeFormBody">
+    <form class="editHomeForm"  method="POST" action="/house/<%=house._id%>?_method=PUT">
+      <div>
+        <label id="houseName">House Name</label>
           <input
+          id="editHomeName"
             class="input"
             type="text"
             placeholder="name"
@@ -21,9 +21,9 @@
       
     
       <div>
-        <label>Image One</label>
+        <label id="img1">Image One</label>
         <div class="control">
-          <input
+          <input id="houseEditImg1"
             class="input"
             type="text"
             placeholder=" image"
@@ -33,9 +33,10 @@
         </div>
       </div>
       <div>
-        <label>Image Two</label>
+        <label id="img2">Image Two</label>
         <div class="control">
           <input
+          id="houseEditImg2"
             class="input"
             type="text"
             placeholder=" image"
@@ -44,9 +45,10 @@
           />
         </div>
       </div>  <div>
-        <label>Image Three</label>
+        <label id="img3">Image Three</label>
         <div class="control">
           <input
+          id="houseEditImg3"
             class="input"
             type="text"
             placeholder=" image"
@@ -57,9 +59,10 @@
       </div>
 
       <div>
-        <label>beds</label>
+        <label id="bedNum">Beds</label>
         <div class="control">
           <input
+          id="houseEditBeds"
             class="input"
             type="text"
             placeholder=" # beds"
@@ -68,9 +71,10 @@
           />
         </div>
         <div>
-            <label>baths</label>
+            <label id="bathNum">Baths</label>
             <div class="control">
               <input
+              id="houseEditBaths"
                 class="input"
                 type="text"
                 placeholder=" # baths"
@@ -79,9 +83,10 @@
               />
             </div>
             <div>
-          <label>price</label>
+          <label id="housePriceLbl">Price</label>
                 <div class="control">
                   <input
+                  id="houseEditPrice"
                     class="input"
                     type="text"
                     placeholder="$$$$"
@@ -96,7 +101,7 @@
    
       
           <div>
-       <input type="submit" value="Edit Your Listing">
+       <input id="editHomeButton" type="submit" value="Edit Your Listing">
           </div>
       </div>
       </form>

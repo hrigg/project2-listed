@@ -1,36 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 	<%- include( 'partials/head.ejs', { page: 'House' } ) %> 
-    <body>  
+    <body class="allListingsPage">  
 		<%- include( 'partials/nav.ejs' )  %>
 
         <section>
             <div>
-                <h2 class="title">All Listings:</h2>
+                <h2 class="allListingsTitle">All Listings</h2>
             </div>
         </section>
 
         <main class="container">
             <div>
-                <h2>D.C.</h2>
+                <div class="containerDC">
+                <h2 id="allListingsCity">Washington D.C.</h2>
+                <div id="listingsList">
                 <% for( let i = 0; i<dcHouse.length; i++){ %>
                     <% const firstHouse = dcHouse[i] %>
                     <a href="/house/<%=firstHouse._id%>"><%= firstHouse.name %></a> 
                     <img src="<%=firstHouse.imageOne%>" style="max-width: 200px;">
-                <% } %>
-                <h2>Chi</h2>
+                    <% } %>
+                </div>
+                </div>
+                <div class="containerChi">
+                <h2 id="allListingsCity">Chicago</h2>
+                <div id="listingsList">
                 <% for( let i = 0; i<chicagoHouse.length; i++){ %>
                     <% const firstHouse = chicagoHouse[i] %>
                     <a href="/house/<%=firstHouse._id%>"><%= firstHouse.name %></a>
                     <img src="<%=firstHouse.imageOne%>" style="max-width: 200px;"> 
                 <% } %> 
-                <h2>Dallas</h2>
-                <% for( let i = 0; i<dallasHouse.length; i++){ %>
-                    <% const firstHouse = dallasHouse[i] %>
-                    <a href="/house/<%=firstHouse._id%>"><%= firstHouse.name %></a>
-                    <img src="<%=firstHouse.imageOne%>" style="max-width: 200px;">  
-
-                <% } %> 
+            </div>
+            </div>
+                <div class="containerDal">
+                    <h2 id="allListingsCity">Dallas</h2>
+                    <div id="listingsList">
+                        <% for( let i = 0; i<dallasHouse.length; i++){ %>
+                        <% const firstHouse = dallasHouse[i] %>
+                        <a href="/house/<%=firstHouse._id%>"><%= firstHouse.name %></a>
+                        <img src="<%=firstHouse.imageOne%>" style="max-width: 200px;">
+                        <% } %> 
+                    </div>
+                </div>
             </div>
         </main>
     

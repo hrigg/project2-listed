@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 	<%- include( '../partials/head.ejs') %> 
-    <body>  
+   
 		<%- include( '../partials/nav.ejs' )  %>
-
+        <body class="dallasBuffer">  
         <section>
             <div>
                 <h2 class="title">Dallas Listings</h2>
@@ -11,12 +11,14 @@
         </section>
 
         <main class="container">
-            <div>
+            <div class="chiLoop">
                 <% for( let i = 0; i<dallasHouse.length; i++){ %>
                     <% const firstHouse = dallasHouse[i] %>
+                    <div class="oneChiLoop">
                     <a href="/house/<%=firstHouse._id%>"><%= firstHouse.name %></a>
                     <img src="<%=firstHouse.imageOne%>" style="max-width: 200px;"> 
-                <% } %> 
+                </div>
+                 <% } %> 
             </div>
         </main>
     

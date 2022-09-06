@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include( '../partials/head.ejs' ) %> 
-<body>  
+<%- include( '../partials/head.ejs' ) %>  
 <%- include( '../partials/nav.ejs' )  %>
     <title>Edit Realtor</title>
 </head>
-<body>
-    <form method="POST" action="/realtor/<%=realtor._id%>?_method=PUT">
-        <label>Realtor Name</label>
+<body class="editRealtorBody">
+    <form class="realtorEditForm" method="POST" action="/realtor/<%=realtor._id%>?_method=PUT">
+
         <div>
           <input
+          id="name"
             class="input"
             type="text"
             placeholder="name"
@@ -21,9 +21,10 @@
       
     
       <div>
-        <label>Image</label>
+        <label></label>
         <div class="control">
           <input
+          id="image"
             class="input"
             type="text"
             placeholder=" image"
@@ -34,9 +35,10 @@
       </div>
 
       <div>
-        <label>Email</label>
+        <label></label>
         <div class="control">
           <input
+          id="email"
             class="input"
             type="text"
             placeholder=" email"
@@ -46,9 +48,10 @@
         </div>
 
       <div>
-        <label>Note</label>
+        <label></label>
         <div class="control">
           <input
+          id="note"
             class="input"
             type="text"
             placeholder=" note"
@@ -59,7 +62,7 @@
       </div>
       
           <div>
-       <input type="submit" value="Edit Your Page">
+       <input id="realtorEditButton" type="submit" value="Edit Your Page">
           </div>
       </div>
       </form>
