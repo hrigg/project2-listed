@@ -832,7 +832,7 @@ form.editHomeForm{
     }
     #houseEditImg2{
         position: absolute;
-        left: 455px;
+        left: 400px;
         top: 150px;
         border: 0;
         box-shadow: 4px 4px 5px;
@@ -842,7 +842,7 @@ form.editHomeForm{
     }
     #houseEditImg3{
         position: absolute;
-        right: 150px;
+        left: 600px;
         top: 150px;
         border: 0;
         box-shadow: 4px 4px 5px;
@@ -852,7 +852,7 @@ form.editHomeForm{
     }
     #houseEditBeds{
         position: absolute;
-        left: 325px;
+        left: 290px;
         bottom: 160px;
         border: 0;
         box-shadow: 4px 4px 5px;
@@ -862,7 +862,7 @@ form.editHomeForm{
     }
     #houseEditBaths{
         position: absolute;
-        right: 325px;
+        left: 400px;
         bottom: 160px;
         border: 0;
         box-shadow: 4px 4px 5px;
@@ -902,25 +902,25 @@ form.editHomeForm{
 }
 #img2{
     position: absolute;
-    left: 520px;
+    left: 450px;
     top: 120px;
     color: white;
 }
 #img3{
     position: absolute;
-    right: 240px;
+    left: 650px;
     top: 120px;
     color: white;
 }
 #bedNum {
     position: absolute;
-    left: 410px;
+    right: 500px;
     bottom: 200px;
     color: white;
 }
 #bathNum {
     position: absolute;
-    right: 440px;
+    left: 420px;
     bottom: 200px;
     color: white;
 }
