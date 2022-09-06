@@ -5,7 +5,7 @@
 <%- include( './partials/nav.ejs' )  %>
     <title>Edit Realtor</title>
 </head>
-<body>
+<body class="editHouseBody">
     <form method="POST" action="/house/<%=house._id%>?_method=PUT">
         <label>House Name</label>
         <div>
