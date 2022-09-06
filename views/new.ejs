@@ -1,58 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include( 'partials/head.ejs' ) %>
-  <body>
-    <%- include( 'partials/nav.ejs' ) %>
-    <section>
-      <div>
-        <h1 class="title">New Listing</h1>
-      </div>
-    </section>
-    <main class="container">
-      <div>
-        <form action="/house" method="POST">
+  <%- include( 'partials/nav.ejs' ) %>
+  <body class="newHomeFormBody">
+        <form class="newHomeForm" action="/house" method="POST">
           <div>
-            <label for="name">Listing Title</label>
+            <label for="name"></label>
             <input
+            id="editHomeName"
               type="text"
-              placeholder="Name"
+              placeholder="Listing Title"
               name="name"
               id="name"
             />
           </div>
           <div>
-            <label for="imageOne">Image Outside</label>
+            <label for="imageOne"></label>
             <input
+            id="houseEditImg1"
             class= "input" 
             type= "text"
-            placeholder= "image outside"
+            placeholder= "Outside Image"
             name= "imageOne"
             id="imageOne"
             /> 
           </div>
           <div>
-            <label for="imageTwo">Image Inside</label>
+            <label for="imageTwo"></label>
             <input
+            id="houseEditImg2"
             class= "input" 
             type= "text"
-            placeholder= "image inside"
+            placeholder= "Inside Image"
             name= "imageTwo"
             id="imageTwo"
             /> 
           </div>
           <div>
-            <label for="imageThree">Image Three</label>
+            <label for="imageThree"></label>
             <input
+            id="houseEditImg3"
             class= "input" 
             type= "text"
-            placeholder= "image inside"
+            placeholder= "Inside Image"
             name= "imageThree"
             id="imageThree"
             /> 
           </div>
           <div>
-            <label for="beds"># beds</label>
+            <label for="beds"></label>
             <input 
+            id="houseEditBeds"
             type="Number" 
             placeholder="Beds" 
             name="beds" 
@@ -60,8 +58,9 @@
             />
           </div>
           <div>
-            <label for="baths"># baths</label>
+            <label for="baths"></label>
             <input 
+            id="houseEditBaths"
             type="Number" 
             placeholder="Baths" 
             name="baths" 
@@ -69,15 +68,16 @@
             />
           </div>
           <div>
-            <label for="price"># price</label>
+            <label for="price"></label>
             <input 
+            id="houseEditPrice"
             type="Number" 
             placeholder="Price" 
             name="price" 
             id="price" 
             />
           </div>
-          <div>
+          <div id="homeCityLocation">
             <label for="city">City:</label>
             <select name="city" id="city">
                 <option value="dc">D.C.</option>
@@ -85,7 +85,7 @@
                 <option value="dallas">Dallas</option>
             </select>
           </div>
-          <div>
+          <div id="realtorChoice">
             <label for = 'realtor'> Choose Realtor </label>
             <select name= "realtor" id="realtor">
                 <% realtor.forEach(realtor => { %>
@@ -94,9 +94,7 @@
               <%  }) %>
             </select>
         </div>
-          <button class="button is-info">Create Listing</button>
+          <button id="editHomeButton" class="button is-info">Create Listing</button>
         </form>
-      </div>
-    </main>
   </body>
 </html>
