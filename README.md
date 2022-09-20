@@ -1,6 +1,8 @@
 Listed - a real estate home - listing platform 
     REALTORS: Sign up for our database and post your listings
     USERS: Browse listings in your city and connect with a local realtor
+    
+Deployed: https://project2listed2.herokuapp.com/
 
 User Experience: 
 Home Page: 
